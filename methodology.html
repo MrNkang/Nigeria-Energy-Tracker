@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Methodology | Nigeria Energy Tracker</title>
+<meta name="description" content="How the Nigeria Energy Tracker assesses all 36 states and the FCT: 17 indicators across five pillars, from policy formulation to infrastructure and electricity access.">
+<link rel="canonical" href="https://nigeriaenergytracker.com/methodology">
+<meta name="theme-color" content="#0D1E36">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nigeria Energy Tracker">
+<meta property="og:title" content="Methodology | Nigeria Energy Tracker">
+<meta property="og:description" content="17 indicators across five pillars, assessed for all 36 states and the FCT. How the Nigeria Energy Tracker scores state electricity markets.">
+<meta property="og:url" content="https://nigeriaenergytracker.com/methodology">
+<meta property="og:image" content="https://nigeriaenergytracker.com/og-image.png">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology | Nigeria Energy Tracker">
+<meta name="twitter:description" content="17 indicators across five pillars, assessed for all 36 states and the FCT.">
+<meta name="twitter:image" content="https://nigeriaenergytracker.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<script src="scroll.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://nigeriaenergytracker.com/methodology#page",
+  "url": "https://nigeriaenergytracker.com/methodology",
+  "name": "Methodology | Nigeria Energy Tracker",
+  "description": "How the Nigeria Energy Tracker assesses all 36 states and the FCT on 17 indicators across five pillars.",
+  "isPartOf": { "@id": "https://nigeriaenergytracker.com/#site" },
+  "publisher": { "@id": "https://nigeriaenergytracker.com/#org" },
+  "inLanguage": "en-NG"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1E36; --lime:#E4F995; --green:#3B5A4B; --white:#FFFFFF;
+    --head-h:77px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--navy);color:var(--white);
+    font-family:'Instrument Sans',sans-serif;font-weight:500;
+    font-variant-numeric:tabular-nums;line-height:1.3;
+  }
+  a{color:inherit;text-decoration:none}
+  .label{font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  @media(min-width:1200px){.wrap{padding:0 64px;max-width:1288px}}
+  section[id]{scroll-margin-top:var(--head-h)}
+  section[tabindex="-1"]:focus{outline:none}
+
+  /* marquee */
+  .marquee{background:var(--lime);color:var(--navy);overflow:hidden;white-space:nowrap}
+  .marquee-track{display:inline-block;padding:9px 0;animation:marq 26s linear infinite}
+  .marquee-track span{margin:0 28px;font-weight:600;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.18)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .lockup{height:40px;width:auto;display:block}
+  .nav-right{display:flex;align-items:center;gap:28px}
+  .nav-right a.link{font-weight:600;font-size:15px;color:rgba(255,255,255,.85)}
+  .nav-right a.link:hover,.nav-right a.link[aria-current="page"]{color:var(--white)}
+  .nav-right a.link[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--lime)}
+  .cta{background:var(--white);color:var(--navy);font-weight:700;font-size:15px;padding:12px 18px;display:inline-block}
+  .cta:hover{background:var(--lime)}
+  @media(max-width:760px){.nav-right a.link{display:none}}
+
+  h1{font-weight:700;letter-spacing:-0.03em;line-height:0.95;font-size:clamp(40px,6.2vw,76px);max-width:14ch}
+  h2{font-weight:700;letter-spacing:-0.03em;line-height:0.95;font-size:clamp(30px,4vw,46px)}
+
+  /* intro */
+  .intro{padding:88px 0 72px}
+  .intro .label{color:var(--lime)}
+  .intro h1{margin-top:18px}
+  .lede{margin-top:24px;max-width:58ch;font-size:19px;line-height:1.45;color:rgba(255,255,255,.85)}
+
+  /* scoring */
+  .scoring{border-top:1px solid rgba(255,255,255,.18);padding:80px 0}
+  .score-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  @media(max-width:820px){.score-grid{grid-template-columns:1fr;gap:32px}}
+  .bignum{font-weight:700;letter-spacing:-0.03em;line-height:.85;font-size:clamp(120px,18vw,220px);color:var(--lime)}
+  .bignum small{display:block;color:var(--white);font-size:clamp(15px,1.5vw,18px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:18px;line-height:1.35}
+  .prose p{font-size:17px;line-height:1.55;color:rgba(255,255,255,.85);max-width:60ch}
+  .prose p+p{margin-top:16px}
+  .prose h2{margin-bottom:22px}
+  .facts{margin-top:30px;border-top:1px solid rgba(255,255,255,.2)}
+  .facts div{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+  @media(max-width:560px){.facts div{grid-template-columns:1fr;gap:4px}}
+  .facts dt{font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);padding-top:3px}
+  .facts dd{font-weight:600;font-size:16px}
+
+  /* pillars on lime */
+  .pillars-sec{background:var(--lime);color:var(--navy);padding:88px 0}
+  .pillars-sec .sub{margin-top:14px;font-size:17px;max-width:56ch}
+  .plist{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px 26px}
+  .pcard{background:var(--navy);color:var(--white);padding:24px 26px 26px;box-shadow:10px 10px 0 var(--green)}
+  .pcard:nth-child(2),.pcard:nth-child(4){background:var(--white);color:var(--navy);box-shadow:10px 10px 0 var(--navy)}
+  .pcard:nth-child(3){background:var(--green);box-shadow:10px 10px 0 var(--navy)}
+  .pcard .ptop{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .pcard .label{opacity:.75}
+  .pcard h3{margin-top:10px;font-weight:700;letter-spacing:-0.02em;font-size:26px;line-height:1.05}
+  .pcard p{margin-top:10px;font-size:15.5px;line-height:1.45}
+  .pcount{font-weight:700;font-size:15px;white-space:nowrap}
+  .lens{margin-top:36px;border-top:2px solid var(--navy);padding-top:18px;max-width:70ch;font-size:16px;line-height:1.5}
+  .lens strong{font-weight:700}
+
+  /* sources on white */
+  .sources{background:var(--white);color:var(--navy);padding:84px 0}
+  .slist{margin-top:30px;border-top:1.5px solid var(--navy);list-style:none;max-width:860px}
+  .slist li{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:16px 0;border-bottom:1.5px solid rgba(13,30,54,.15);font-size:16px;line-height:1.45}
+  @media(max-width:560px){.slist li{grid-template-columns:1fr;gap:4px}}
+  .slist .label{color:rgba(13,30,54,.55);padding-top:3px}
+  .slist a{text-decoration:underline;text-underline-offset:3px}
+  .back{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+  .btn-solid{background:var(--navy);color:var(--white);font-weight:700;padding:16px 24px;font-size:16px}
+  .btn-solid:hover{background:var(--green)}
+  .btn-line{border:2px solid var(--navy);color:var(--navy);font-weight:600;padding:14px 22px;font-size:16px}
+  .btn-line:hover{background:var(--lime)}
+
+  .veriv{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px;text-decoration-color:rgba(255,255,255,.4)}
+  .veriv:hover{color:var(--lime);text-decoration-color:var(--lime)}
+
+  /* footer */
+  footer{padding:46px 0 58px;border-top:1px solid rgba(255,255,255,.18)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot-left{display:flex;align-items:center;gap:16px}
+  .foot svg{height:34px;width:auto}
+  .foot .fine{color:rgba(255,255,255,.6);font-size:14px}
+
+  ::selection{background:var(--lime);color:var(--navy)}
+</style>
+</head>
+<body>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Tracking energy reform across Nigeria</span><span>36 states and the FCT</span><span>Electricity Act 2023</span><span>nigeriaenergytracker.com</span>
+    <span>Tracking energy reform across Nigeria</span><span>36 states and the FCT</span><span>Electricity Act 2023</span><span>nigeriaenergytracker.com</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" aria-label="Nigeria Energy Tracker home"><svg class="lockup" viewBox="0 0 1299 577" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_794_4744)">
+<path d="M576.549 0V501.733H406.16L423.754 576.549H250.6L173.154 247.184V576.54H0V232.625H169.731L132.624 74.816H305.774L403.395 489.968V0H576.549Z" fill="#E4F995"/>
+<path d="M760.279 133.826V0H788.822V138.567H733.373L687.742 4.74045V138.567H659.2V0H714.83L760.279 133.826Z" fill="white"/>
+<path d="M834.668 138.567H806.854V39.5645H834.668V138.567ZM835.214 26.2548H806.49V0H835.214V26.2548Z" fill="white"/>
+<path d="M919.791 39.5645L947.424 40.2938V137.473C947.424 146.771 945.061 154.429 940.334 160.446C935.607 166.462 929.608 170.656 922.336 173.209C915.064 175.761 907.247 177.037 898.884 177.037C890.703 177.037 883.25 175.761 876.341 173.391C869.433 171.021 863.615 167.374 859.071 162.451C854.526 157.529 851.799 151.33 850.89 144.037H878.886C879.795 148.595 882.159 152.059 885.795 154.429C889.431 156.799 893.794 157.893 898.884 157.893C905.065 157.893 910.156 156.252 913.973 152.788C917.791 149.324 919.791 144.219 919.791 137.473V116.323C917.064 122.705 912.701 127.81 906.883 131.821C901.066 135.832 894.521 137.838 887.067 137.838C879.068 137.838 871.978 135.65 865.797 131.456C859.616 127.263 854.889 121.428 851.435 113.771C847.981 106.113 846.345 97.3614 846.345 87.5159C846.345 77.6703 847.981 68.9188 851.435 61.2611C854.889 53.6035 859.616 47.7691 865.797 43.5756C871.978 39.3821 879.068 37.1942 887.067 37.1942C895.248 37.1942 902.156 39.3821 907.792 43.9403C913.428 48.4984 917.427 54.3328 919.791 61.4434V39.5645ZM914.882 111.218H914.701C918.7 105.748 920.7 98.0907 920.7 88.2452C920.7 78.3996 918.7 70.742 914.701 65.2723C910.701 59.8025 905.065 57.0676 897.612 57.0676C890.158 57.0676 884.522 59.8025 880.523 65.2723C876.523 70.742 874.523 78.3996 874.523 88.2452C874.523 98.0907 876.523 105.748 880.523 111.218C884.522 116.688 890.34 119.423 897.793 119.423C905.247 119.423 910.883 116.688 914.882 111.218Z" fill="white"/>
+<path d="M1057.27 97.3614H986.552C987.461 105.384 989.824 111.4 993.642 115.594C997.459 119.787 1002.37 121.793 1008.37 121.793C1013.46 121.793 1017.46 120.699 1020.55 118.693C1023.64 116.688 1026 113.588 1027.82 109.395H1055.82C1052.54 119.787 1046.73 127.627 1038.55 132.915C1030.36 138.202 1020.18 140.937 1008.19 140.937C998.187 140.937 989.46 138.749 981.825 134.373C974.189 129.998 968.372 123.799 964.191 115.959C960.009 108.119 958.009 99.1847 958.009 89.1568C958.009 79.1289 960.191 70.195 964.372 62.3551C968.554 54.5151 974.553 48.4984 982.189 44.1226C989.824 39.7468 998.55 37.5589 1008.37 37.5589C1018.37 37.5589 1027.09 39.7468 1034.55 44.1226C1042 48.4984 1047.82 54.5151 1051.82 62.3551C1055.82 70.195 1057.82 79.3113 1057.82 89.7038C1057.82 92.074 1057.63 94.6265 1057.27 97.3614ZM994.005 61.9904L993.823 62.1727C990.006 65.8192 987.642 71.4713 986.552 78.9466H1029.64C1028.91 72.0183 1026.55 66.5485 1022.73 62.5374C1018.91 58.5262 1014 56.5207 1008.19 56.5207C1002.55 56.5207 997.823 58.3439 994.005 61.9904Z" fill="white"/>
+<path d="M1096.2 65.4546L1096.38 65.2723C1098.38 56.8853 1102.2 50.1393 1107.65 45.0342C1113.1 39.9291 1120.38 37.3766 1129.28 37.3766V64.7253H1122.19C1113.29 64.7253 1106.74 66.3662 1102.56 69.8304C1098.38 73.2945 1096.38 79.1289 1096.38 87.3336V138.567H1068.56V39.5645H1096.2V65.4546Z" fill="white"/>
+<path d="M1164.56 138.567H1136.74V39.5645H1164.56V138.567ZM1165.1 26.2548H1136.38V0H1165.1V26.2548Z" fill="white"/>
+<path d="M1250.23 42.4817L1250.41 43.0286C1257.14 46.3105 1262.23 50.8686 1265.68 56.703C1269.13 62.5374 1270.77 69.2834 1270.77 76.7587V139.114H1243.32V120.517C1240.23 127.08 1236.05 132.185 1230.96 135.832C1225.87 139.478 1218.96 141.302 1210.41 141.302C1204.05 141.302 1198.23 139.843 1192.96 137.108C1187.69 134.373 1183.51 130.545 1180.42 125.622C1177.33 120.699 1175.87 115.047 1175.87 108.848C1175.87 98.6377 1179.69 91.3447 1187.33 86.9689C1194.96 82.5931 1204.78 79.8582 1216.78 78.7643L1242.77 76.2117V74.5708C1242.77 69.2834 1241.32 64.9076 1238.23 61.6258C1235.14 58.3439 1230.78 56.703 1225.14 56.703C1220.05 56.703 1216.05 57.9793 1212.96 60.5318C1209.87 63.0844 1208.05 66.1839 1207.5 70.0127H1179.51C1180.42 63.2667 1182.96 57.4323 1186.96 52.5095C1190.96 47.5868 1196.23 43.9403 1202.78 41.3877C1209.32 38.8352 1216.78 37.5589 1225.14 37.5589C1235.14 37.5589 1243.5 39.1998 1250.23 42.4817ZM1233.14 121.064L1232.96 120.881C1236.23 118.511 1238.77 115.229 1240.41 111.036C1242.05 106.842 1242.96 102.102 1242.96 96.8144V92.8033L1227.14 94.4442C1222.41 94.9912 1218.41 95.7205 1215.32 96.6321C1212.23 97.5437 1209.69 99.0023 1207.69 101.008C1205.69 103.013 1204.6 105.748 1204.6 109.213C1204.6 112.312 1205.32 115.047 1206.78 117.417C1208.23 119.787 1210.23 121.611 1212.78 122.887C1215.32 124.163 1218.23 124.71 1221.32 124.71C1225.87 124.71 1229.87 123.434 1233.14 121.064Z" fill="white"/>
+<path d="M687.924 261.818V296.825H755.916V320.892H659.2V182.325H754.28V206.392H687.924V237.751H753.007V261.818H687.924Z" fill="white"/>
+<path d="M847.017 224.624L846.653 224.442C851.561 227.724 855.197 232.282 857.561 238.116C859.924 243.951 861.197 250.514 861.197 257.99V320.709H833.382V264.006C833.382 255.619 831.927 249.42 828.837 245.227C825.746 241.033 821.201 239.028 815.202 239.028C809.384 239.028 804.84 241.033 801.749 245.227C798.658 249.42 797.022 255.802 797.022 264.371V320.709H769.207V221.707H796.84V241.945C799.204 235.199 803.022 229.729 808.294 225.718C813.566 221.707 820.292 219.701 828.473 219.701C835.927 219.701 842.108 221.342 847.017 224.624Z" fill="white"/>
+<path d="M970.803 279.686H900.084C900.993 287.708 903.357 293.725 907.174 297.919C910.992 302.112 915.901 304.118 921.9 304.118C926.99 304.118 930.99 303.024 934.08 301.018C937.171 299.013 939.534 295.913 941.352 291.72H969.349C966.077 302.112 960.259 309.952 952.078 315.239C943.897 320.527 933.717 323.262 921.718 323.262C911.719 323.262 902.993 321.074 895.358 316.698C887.722 312.322 881.905 306.123 877.723 298.283C873.542 290.443 871.542 281.509 871.542 271.482C871.542 261.454 873.724 252.52 877.905 244.68C882.086 236.84 888.086 230.823 895.721 226.447C903.357 222.072 912.083 219.884 921.9 219.884C931.899 219.884 940.625 222.072 948.079 226.447C955.532 230.823 961.35 236.84 965.35 244.68C969.349 252.52 971.349 261.636 971.349 272.028C971.349 274.399 971.167 276.951 970.803 279.686ZM907.538 244.315L907.356 244.497C903.538 248.144 901.175 253.796 900.084 261.271H943.17C942.443 254.343 940.08 248.873 936.262 244.862C932.444 240.851 927.536 238.845 921.718 238.845C916.082 238.845 911.356 240.669 907.538 244.315Z" fill="white"/>
+<path d="M1009.73 247.779L1009.91 247.597C1011.91 239.21 1015.73 232.464 1021.18 227.359C1026.64 222.254 1033.91 219.701 1042.82 219.701V247.05H1035.73C1026.82 247.05 1020.27 248.691 1016.09 252.155C1011.91 255.619 1009.91 261.454 1009.91 269.658V320.892H982.096V221.889H1009.73V247.779Z" fill="white"/>
+<path d="M1117.58 221.889L1145.21 222.618V319.798C1145.21 329.096 1142.85 336.754 1138.12 342.771C1133.4 348.787 1127.4 352.981 1120.13 355.533C1112.85 358.086 1105.04 359.362 1096.67 359.362C1088.49 359.362 1081.04 358.086 1074.13 355.716C1067.22 353.345 1061.41 349.699 1056.86 344.776C1052.32 339.853 1049.59 333.654 1048.68 326.361H1076.68C1077.59 330.919 1079.95 334.384 1083.58 336.754C1087.22 339.124 1091.58 340.218 1096.67 340.218C1102.86 340.218 1107.95 338.577 1111.76 335.113C1115.58 331.649 1117.58 326.544 1117.58 319.798V298.648C1114.85 305.029 1110.49 310.134 1104.67 314.146C1098.86 318.157 1092.31 320.162 1084.86 320.162C1076.86 320.162 1069.77 317.974 1063.59 313.781C1057.41 309.587 1052.68 303.753 1049.22 296.095C1045.77 288.438 1044.13 279.686 1044.13 269.841C1044.13 259.995 1045.77 251.243 1049.22 243.586C1052.68 235.928 1057.41 230.094 1063.59 225.9C1069.77 221.707 1076.86 219.519 1084.86 219.519C1093.04 219.519 1099.95 221.707 1105.58 226.265C1111.22 230.823 1115.22 236.658 1117.58 243.768V221.889ZM1112.67 293.543H1112.49C1116.49 288.073 1118.49 280.415 1118.49 270.57C1118.49 260.724 1116.49 253.067 1112.49 247.597C1108.49 242.127 1102.86 239.392 1095.4 239.392C1087.95 239.392 1082.31 242.127 1078.31 247.597C1074.31 253.067 1072.31 260.724 1072.31 270.57C1072.31 280.415 1074.31 288.073 1078.31 293.543C1082.31 299.013 1088.13 301.747 1095.58 301.747C1103.04 301.747 1108.67 299.013 1112.67 293.543Z" fill="white"/>
+<path d="M1203.79 305.029L1227.43 221.889H1256.7L1217.79 356.627H1189.25L1202.34 310.681H1178.89L1149.8 221.889H1177.8L1203.79 305.029Z" fill="white"/>
+<path d="M658.913 364.755H773.446V388.822H730.542V503.322H701.818V388.822H658.913V364.755Z" fill="white"/>
+<path d="M789.015 430.21L789.197 430.028C791.197 421.641 795.014 414.895 800.468 409.79C805.922 404.685 813.194 402.132 822.102 402.132V429.481H815.012C806.104 429.481 799.559 431.122 795.378 434.586C791.197 438.05 789.197 443.884 789.197 452.089V503.322H761.382V404.32H789.015V430.21Z" fill="white"/>
+<path d="M896.879 407.237L897.061 407.784C903.787 411.066 908.878 415.624 912.332 421.458C915.786 427.293 917.422 434.039 917.422 441.514V503.869H889.971V485.272C886.88 491.836 882.699 496.941 877.608 500.587C872.518 504.234 865.61 506.057 857.065 506.057C850.702 506.057 844.885 504.599 839.613 501.864C834.341 499.129 830.159 495.3 827.069 490.377C823.978 485.454 822.524 479.802 822.524 473.603C822.524 463.393 826.342 456.1 833.977 451.724C841.613 447.349 851.43 444.614 863.428 443.52L889.425 440.967V439.326C889.425 434.039 887.971 429.663 884.88 426.381C881.79 423.099 877.427 421.458 871.791 421.458C866.701 421.458 862.701 422.735 859.611 425.287C856.52 427.84 854.702 430.939 854.157 434.768H826.16C827.069 428.022 829.614 422.188 833.614 417.265C837.613 412.342 842.885 408.696 849.43 406.143C855.975 403.591 863.428 402.314 871.791 402.314C881.79 402.314 890.152 403.955 896.879 407.237ZM879.79 485.819L879.608 485.637C882.881 483.267 885.426 479.985 887.062 475.791C888.698 471.598 889.607 466.857 889.607 461.57V457.559L873.791 459.2C869.064 459.747 865.064 460.476 861.974 461.388C858.883 462.299 856.338 463.758 854.338 465.763C852.339 467.769 851.248 470.504 851.248 473.968C851.248 477.067 851.975 479.802 853.429 482.173C854.884 484.543 856.884 486.366 859.429 487.642C861.974 488.919 864.883 489.466 867.973 489.466C872.518 489.466 876.518 488.189 879.79 485.819Z" fill="white"/>
+<path d="M951.275 499.129L951.093 499.493C943.276 495.118 937.276 489.101 933.095 481.261C928.914 473.421 926.732 464.305 926.732 453.912C926.732 443.702 928.914 434.768 933.277 426.928C937.64 419.088 943.639 413.072 951.457 408.696C959.274 404.32 968.182 402.132 978.181 402.132C986.725 402.132 994.361 403.591 1001.09 406.69C1007.81 409.79 1013.45 414.165 1017.81 419.818C1022.18 425.47 1025.08 432.216 1026.36 439.873H998.36C997.088 434.221 994.724 429.663 991.452 426.199C988.18 422.735 983.816 420.911 978.362 420.911C971.091 420.911 965.455 423.829 961.455 429.663C957.456 435.497 955.456 443.52 955.456 453.73C955.456 464.122 957.456 472.145 961.455 477.979C965.455 483.814 971.091 486.731 978.181 486.731C988.907 486.731 995.997 480.532 999.269 468.316H1027.27C1025.63 476.156 1022.54 482.902 1017.99 488.554C1013.45 494.206 1007.81 498.399 1000.91 501.317C993.997 504.234 986.362 505.693 977.999 505.693C968 505.693 959.092 503.505 951.275 499.129Z" fill="white"/>
+<path d="M1092.95 448.26L1134.22 503.322H1100.95L1063.87 453.183V503.322H1036.05V364.755H1063.87V444.249L1099.5 404.32H1132.4L1092.95 448.26Z" fill="white"/>
+<path d="M1226.99 462.117H1156.27C1157.18 470.139 1159.54 476.156 1163.36 480.349C1167.18 484.543 1172.08 486.548 1178.08 486.548C1183.17 486.548 1187.17 485.454 1190.26 483.449C1193.35 481.443 1195.72 478.344 1197.54 474.15H1225.53C1222.26 484.543 1216.44 492.383 1208.26 497.67C1200.08 502.958 1189.9 505.693 1177.9 505.693C1167.9 505.693 1159.18 503.505 1151.54 499.129C1143.91 494.753 1138.09 488.554 1133.91 480.714C1129.73 472.874 1127.73 463.94 1127.73 453.912C1127.73 443.884 1129.91 434.95 1134.09 427.111C1138.27 419.271 1144.27 413.254 1151.91 408.878C1159.54 404.502 1168.27 402.314 1178.08 402.314C1188.08 402.314 1196.81 404.502 1204.26 408.878C1211.72 413.254 1217.53 419.271 1221.53 427.111C1225.53 434.95 1227.53 444.067 1227.53 454.459C1227.53 456.829 1227.35 459.382 1226.99 462.117ZM1163.72 426.746L1163.54 426.928C1159.72 430.575 1157.36 436.227 1156.27 443.702H1199.35C1198.63 436.774 1196.26 431.304 1192.45 427.293C1188.63 423.282 1183.72 421.276 1177.9 421.276C1172.27 421.276 1167.54 423.099 1163.72 426.746Z" fill="white"/>
+<path d="M1265.91 430.21L1266.1 430.028C1268.09 421.641 1271.91 414.895 1277.37 409.79C1282.82 404.685 1290.09 402.132 1299 402.132V429.481H1291.91C1283 429.481 1276.46 431.122 1272.28 434.586C1268.09 438.05 1266.1 443.884 1266.1 452.089V503.322H1238.28V404.32H1265.91V430.21Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_794_4744">
+<rect width="1299" height="577" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a>
+    <nav class="nav-right">
+      <a class="link" href="/#rankings">Rankings</a>
+      <a class="link" href="/#pulse">Highlights</a>
+      <a class="link" href="/#launch">2026 Report</a>
+      <a class="cta" href="/#explore">Explore the data</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="intro">
+  <div class="wrap">
+    <div class="label">Methodology</div>
+    <h1>How the tracker scores state electricity markets</h1>
+    <p class="lede">The Electricity Act 2023 created opportunities for states to establish and regulate their own electricity markets. We assess all 36 states and the FCT across 17 indicators and five pillars, tracking progress from policy formulation to infrastructure and electricity access.</p>
+  </div>
+</section>
+
+<section class="scoring" id="scoring">
+  <div class="wrap score-grid">
+    <div class="bignum">17<small>Indicators across<br>five pillars</small></div>
+    <div class="prose">
+      <h2>Scoring</h2>
+      <p>Each of the 36 states and the FCT is assessed against the same 17 indicators. A state's score is the number of indicators it meets, out of 17. The ranking shows that score as the share of the 17 indicators met.</p>
+      <p>Indicators are grouped into five pillars, so each state profile also shows how many indicators it meets within each pillar.</p>
+      <dl class="facts">
+        <div><dt>Coverage</dt><dd>36 states and the FCT</dd></div>
+        <div><dt>Indicators</dt><dd>17, across five pillars</dd></div>
+        <div><dt>Score</dt><dd>Indicators met, out of 17</dd></div>
+        <div><dt>Ranking</dt><dd>Share of 17 indicators met</dd></div>
+        <div><dt>Edition</dt><dd>2026, updated Q3 2026</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="pillars-sec" id="pillars">
+  <div class="wrap">
+    <h2>The five pillars</h2>
+    <p class="sub">From a state's legal framework to what reaches people on the ground.</p>
+    <div class="plist">
+      <article class="pcard">
+        <div class="ptop"><span class="label">Pillar 1</span><span class="pcount">3 indicators</span></div>
+        <h3>Policy formulation</h3>
+        <p>A state electricity law, passed and aligned with the national framework.</p>
+        <!-- Indicators for Policy formulation (3) go here. -->
+      </article>
+      <article class="pcard">
+        <div class="ptop"><span class="label">Pillar 2</span><span class="pcount">3 indicators</span></div>
+        <h3>Regulatory setup</h3>
+        <p>A state commission with tariff and licensing frameworks in place.</p>
+        <!-- Indicators for Regulatory setup (3) go here. -->
+      </article>
+      <article class="pcard">
+        <div class="ptop"><span class="label">Pillar 3</span><span class="pcount">3 indicators</span></div>
+        <h3>Infrastructure</h3>
+        <p>Generation, transmission and renewable projects on the ground.</p>
+        <!-- Indicators for Infrastructure (3) go here. -->
+      </article>
+      <article class="pcard">
+        <div class="ptop"><span class="label">Pillar 4</span><span class="pcount">3 indicators</span></div>
+        <h3>Market participation</h3>
+        <p>Licensed generation, transmission and renewable companies entering.</p>
+        <!-- Indicators for Market participation (3) go here. -->
+      </article>
+      <article class="pcard">
+        <div class="ptop"><span class="label">Pillar 5</span><span class="pcount">5 indicators</span></div>
+        <h3>Performance</h3>
+        <p>Grid reliance falling, access rising, clean transport taking hold.</p>
+        <!-- Indicators for Performance (5) go here. -->
+      </article>
+    </div>
+    <p class="lens"><strong>Clean mobility lens.</strong> The state-by-state explorer also offers a Clean mobility view, which shows each state's clean mobility score out of 4.</p>
+  </div>
+</section>
+
+<section class="sources" id="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ul class="slist">
+      <li><span class="label">Scores and rankings</span><span>Nigeria State Electricity Tracker and Ranking Report, Veriv Africa, 2026</span></li>
+      <li><span class="label">State boundaries</span><span>geoBoundaries (<a href="https://www.geoboundaries.org" target="_blank" rel="noopener">www.geoboundaries.org</a>), data from GRID3 (<a href="https://data.grid3.org" target="_blank" rel="noopener">data.grid3.org</a>), CC BY 4.0</span></li>
+      <!-- Indicator-level sources go here: one <li> per indicator or source, grouped by pillar. -->
+    </ul>
+    <div class="back">
+      <a class="btn-solid" href="/#explore">Explore the data</a>
+      <a class="btn-line" href="/#rankings">See the ranking</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-left">
+      <svg viewBox="0 0 995 905" aria-hidden="true"><g fill="#E4F995"><path d="M298.593 365.146H0V904.99H298.593V365.146Z"/><path d="M730.739 904.999H432.146L228.7 117.436H527.292L730.739 904.999Z"/><path d="M994.225 0H695.632V787.564H994.225V0Z"/></g></svg>
+      <span class="fine">Nigeria Energy Tracker · An initiative of <a class="veriv" href="https://www.verivafrica.com" target="_blank" rel="noopener">Veriv Africa</a></span>
+    </div>
+    <span class="fine">nigeriaenergytracker.com · info@nigeriaenergytracker.com</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -19,6 +19,7 @@
 <meta name="twitter:description" content="Which Nigerian states are ready for the electricity market? Rankings, methodology and the 2026 report.">
 <meta name="twitter:image" content="https://nigeriaenergytracker.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
+<script src="scroll.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,7 +63,9 @@
   :root{
     --navy:#0D1E36; --lime:#E4F995; --green:#3B5A4B; --white:#FFFFFF;
     --ease-expo:cubic-bezier(0.16,1,0.3,1);
-    --t-enter:650ms; --stagger:80ms;           /* editable timing */
+    --ease-bounce:cubic-bezier(.34,1.56,.64,1); /* ~10% overshoot, for the bars that bounce in */
+    --t-enter:1100ms; --stagger:220ms;         /* editable timing */
+    --head-h:77px;                             /* sticky header height, incl. border */
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{
@@ -82,7 +85,9 @@
   @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* ----- header ----- */
-  header{border-bottom:1px solid rgba(255,255,255,.18)}
+  header{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.18)}
+  section[id]{scroll-margin-top:var(--head-h)}
+  section[tabindex="-1"]:focus{outline:none}
   .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
   .lockup{height:40px;width:auto;display:block}
   .nav-right{display:flex;align-items:center;gap:28px}
@@ -110,21 +115,22 @@
   .btn-solid:hover{background:var(--lime)}
   .btn-line{border:2px solid rgba(255,255,255,.6);color:var(--white);font-weight:600;padding:14px 22px;font-size:16px}
   .btn-line:hover{border-color:var(--white)}
+  .btn-soon,.btn-soon:hover{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.6);cursor:default}
   .func{margin-top:64px;display:flex;gap:26px;flex-wrap:wrap;color:rgba(255,255,255,.55)}
 
   .hero-icon{position:absolute;right:-6%;bottom:-32%;width:58%;min-width:420px;z-index:1;pointer-events:none}
   @media(max-width:860px){.hero-icon{position:relative;right:auto;bottom:auto;width:120%;margin:-10px -24px -40% 30%}}
   .hero-icon svg{width:100%;height:auto;display:block;overflow:visible}
   .ibar{fill:var(--lime);transform:translateY(24%);opacity:0}
-  .on .ibar{animation:rise var(--t-enter) var(--ease-expo) forwards}
-  .on .b1{animation-delay:120ms}
-  .on .b2{animation-delay:calc(120ms + var(--stagger))}
-  .on .b3{animation-delay:calc(120ms + var(--stagger)*2)}
+  .on .ibar{animation:rise var(--t-enter) var(--ease-bounce) forwards}
+  .on .b1{animation-delay:200ms}
+  .on .b2{animation-delay:calc(200ms + var(--stagger))}
+  .on .b3{animation-delay:calc(200ms + var(--stagger)*2)}
   @keyframes rise{to{transform:translateY(0);opacity:1}}
 
   /* the word "electricity": unlit tube, then switched on */
   .flick{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.45)}
-  .on-word .flick{animation:wordOn .75s var(--ease-expo) 1.15s forwards}
+  .on-word .flick{animation:wordOn 2.2s ease-in-out 1.6s forwards}
   @keyframes wordOn{
     0%{color:transparent;-webkit-text-stroke-color:rgba(255,255,255,.45)}
     38%{color:var(--lime);-webkit-text-stroke-color:transparent}
@@ -195,6 +201,12 @@
   .beam{opacity:.22;transform:translateY(26px);transition:opacity .7s var(--ease-expo),transform .7s var(--ease-expo)}
   .beam.live{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.beam{opacity:1;transform:none;transition:none}}
+  @media(prefers-reduced-motion:reduce){
+    .seg,.panel.play .seg{transform:none !important;transition:none !important}
+    .grown .rbar{transition:none !important}
+    .flick2{color:var(--lime) !important;-webkit-text-stroke:0 transparent !important;animation:none !important}
+    .wu-live{stroke-dashoffset:0 !important;animation:none !important}
+  }
 
   /* switch-on word, reusable on navy */
   .flick2{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.45)}
@@ -257,7 +269,7 @@
   .seg{height:16px;flex:1;background:rgba(13,30,54,.12);transform:scaleX(0);transform-origin:left}
   .seg.on{background:var(--navy)}
   .seg.full{background:var(--lime);outline:1.5px solid var(--navy);outline-offset:-1.5px}
-  .panel.play .seg{transition:transform .5s var(--ease-expo);transform:scaleX(1)}
+  .panel.play .seg{transition:transform .75s var(--ease-bounce);transform:scaleX(1)}
   .pv{font-weight:700;font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
   .p-src{margin-top:20px;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,30,54,.45)}
 
@@ -298,8 +310,8 @@
   @media(prefers-reduced-motion: no-preference){
     .count .beam .pillar{opacity:0;transform:translateY(-90px);transform-origin:bottom center}
     .count .beam.live .pillar{
-      animation:pdrop .6s cubic-bezier(.22,1,.36,1) calc(.1s + var(--i)*.16s) both,
-                pbump .3s ease-out calc(1.35s + (4 - var(--i))*.07s) both;
+      animation:pdrop 1s cubic-bezier(.22,1,.36,1) calc(.1s + var(--i)*.24s) both,
+                pbump .45s ease-out calc(2.15s + (4 - var(--i))*.1s) forwards;
     }
     .count .beam.live .pillar:nth-child(1){--i:0}
     .count .beam.live .pillar:nth-child(2){--i:1}
@@ -383,13 +395,13 @@
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <h1>Which states are ready for the <span class="flick" id="flickWord">electricity</span> market?</h1>
-      <p class="hero-sub">The Electricity Act 2023 split one national power market into thirty-seven: the 36 states and the FCT. We score each one on 17 indicators across five pillars, from laws passed to people electrified.</p>
+      <p class="hero-sub">The Electricity Act 2023 created opportunities for states to establish and regulate their own electricity markets. We assess all 36 states and the FCT across 17 indicators and five pillars, tracking progress from policy formulation to infrastructure and electricity access.</p>
       <div class="hero-ctas">
         <a class="btn-solid" href="#rankings">See the ranking</a>
-        <a class="btn-line" href="#launch">Download the report</a>
+        <span class="btn-line btn-soon" aria-disabled="true">Report coming soon</span>
       </div>
       <div class="func label">
-        <span>Updated Q3 2026</span><a class="veriv" href="https://www.verivafrica.com" target="_blank" rel="noopener">By Veriv Africa</a><span>Abuja, Nigeria</span>
+        <span>Updated Q3 2026</span><a class="veriv" href="https://www.verivafrica.com" target="_blank" rel="noopener">By Veriv Africa</a>
       </div>
     </div>
     <div class="hero-icon" id="heroIcon">
@@ -493,12 +505,13 @@
   <div class="wrap launch-grid beam">
     <div>
       <h2>Beyond the Electricity Act</h2>
-      <p class="body">Lagos leads, with Edo, Niger, Enugu and Delta close behind. The full report carries every state's scorecard, the methodology, and what must change next. Launching in Abuja; the download lives here.</p>
+      <p class="body">The Electricity Act 2023 opened up new opportunities for state-level electricity market development. But translating legislative provisions into functioning electricity markets requires more than policy reform.</p>
+      <p class="body">Explore how states are progressing across regulatory readiness, infrastructure, market participation and electricity access. The Nigeria Energy Tracker and Ranking Report brings together the indicators, state profiles and rankings needed to understand where progress is being made and where gaps remain.</p>
     </div>
     <div class="ticket">
       <div class="label">Launch · Report 2026</div>
       <h3>Nigeria Energy Tracker and Ranking Report</h3>
-      <div class="meta"><span>October 2026</span><span>Abuja</span></div>
+      <div class="meta"><span>Report coming soon</span></div>
     </div>
   </div>
 </section>
@@ -653,7 +666,7 @@
     countUp(document.getElementById('pScore'),s.t,700,0);
     document.getElementById('pRows').innerHTML = PILLARS.map((p,i)=>{
       const got=s.p[i], max=p[1];
-      let segs=''; for(let k=0;k<max;k++) segs+=`<span class="seg ${k<got?(got===max?'full':'on'):''}" style="transition-delay:${(i*70+k*60)}ms"></span>`;
+      let segs=''; for(let k=0;k<max;k++) segs+=`<span class="seg ${k<got?(got===max?'full':'on'):''}" style="transition-delay:${(i*160+k*90)}ms"></span>`;
       return `<div class="prow"><span class="pl">${p[0]}</span><span class="segs">${segs}</span><span class="pv">${got}/${max}</span></div>`;
     }).join('');
     panel.classList.remove('play'); void panel.offsetWidth; panel.classList.add('play');
