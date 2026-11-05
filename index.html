@@ -679,13 +679,21 @@
     caps('',30,'rgba(255,255,255,.75)');x.font='600 30px "Instrument Sans"';
     x.fillText('NIGERIA ENERGY TRACKER · 2026 RANKING',72,112);
 
-    // state name, wrapped
-    x.fillStyle=WHITE;x.font='700 118px "Instrument Sans"';
-    const words=s.n.split(' ');let lines=[],line='';
-    words.forEach(w=>{const t=line?line+' '+w:w;
-      if(x.measureText(t).width>620&&line){lines.push(line);line=w;}else line=t;});
-    lines.push(line);
-    let y=252;lines.forEach(l=>{x.fillText(l,68,y);y+=118;});
+    // state name: one line, shrinking from 118px to no less than ~70% to fit the card width;
+    // only if it still doesn't fit, wrap at the minimum size with tight leading
+    x.fillStyle=WHITE;
+    const NAME_MAX=118,NAME_MIN=83,nameW=W-68-72;
+    let fs=NAME_MAX;x.font=`700 ${fs}px "Instrument Sans"`;
+    while(x.measureText(s.n).width>nameW&&fs>NAME_MIN){fs--;x.font=`700 ${fs}px "Instrument Sans"`;}
+    let lines=[s.n],lh=fs;
+    if(x.measureText(s.n).width>nameW){
+      lines=[];let line='';lh=Math.round(fs*1.04);
+      s.n.split(' ').forEach(w=>{const t=line?line+' '+w:w;
+        if(x.measureText(t).width>nameW&&line){lines.push(line);line=w;}else line=t;});
+      lines.push(line);
+    }
+    let y=252-(NAME_MAX-fs)*.72;                                  // keep the cap top where it was
+    lines.forEach((l,i)=>{if(i)y+=lh;x.fillText(l,68,y);});y+=lh;
 
     x.font='600 30px "Instrument Sans"';x.fillStyle='rgba(255,255,255,.7)';
     x.fillText(('RANK '+String(s.rank).padStart(2,'0')+' OF 37 · '+s.r).toUpperCase(),72,y+6);
