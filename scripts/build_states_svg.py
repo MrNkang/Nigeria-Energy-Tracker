@@ -13,7 +13,7 @@ Pipeline (standard library only, Python 3.8+):
      junction vertices (where the set of states sharing a vertex changes),
      and each arc is simplified once with Douglas-Peucker, so neighbouring
      states keep identical borders (no gaps or slivers).
-  4. Emit compact relative SVG path strings keyed by the state names used in
+  4. Emit compact relative SVG path strings and a label anchor (centroid) keyed by the state names used in
      the STATES array in index.html, and check that all 37 names match.
 
 Usage:
@@ -168,13 +168,26 @@ def main():
             parts.append(f"{fmt(bx - ax)} {fmt(by - ay)}")
         return cmd + ("l" + " ".join(parts) if parts else "") + "z"
 
+    def centroid(rings_):
+        """Area-weighted centroid of the largest ring (label anchor)."""
+        best, ba = None, -1.0
+        for r in rings_:
+            a = cx = cy = 0.0
+            for (x0_, y0_), (x1_, y1_) in zip(r, r[1:] + r[:1]):
+                c = x0_ * y1_ - x1_ * y0_
+                a += c; cx += (x0_ + x1_) * c; cy += (y0_ + y1_) * c
+            if abs(a) > ba:
+                ba, best = abs(a), (cx / (3 * a), cy / (3 * a)) if a else r[0]
+        return [round(best[0], 1), round(best[1], 1)]
+
     expected = states_names(ROOT / "index.html")
-    paths, src_names = {}, {}
+    paths, src_names, labels = {}, {}, {}
     for fi, f in enumerate(feats):
         src = f["properties"]["shapeName"]
         name = NAME_OVERRIDES.get(src, src)
         src_names[name] = src
         paths[name] = "".join(ring_d(r) for r in out_rings[fi])
+        labels[name] = centroid(out_rings[fi])
 
     # --- name check --------------------------------------------------------
     missing = sorted(set(expected) - set(paths))
@@ -197,6 +210,7 @@ def main():
         "attribution": "geoBoundaries (www.geoboundaries.org), boundary data from GRID3 (data.grid3.org)",
         "simplifyTolerance": args.tolerance,
         "states": {n: paths[n] for n in expected},  # same order as STATES
+        "labels": {n: labels[n] for n in expected},  # label anchor [x, y] per state
     }
     Path(args.output).write_text(json.dumps(result, separators=(",", ":"), ensure_ascii=False) + "\n", "utf-8")
     pts = sum(d.count(" ") + 1 for d in paths.values()) // 2
