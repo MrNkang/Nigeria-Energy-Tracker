@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nigeria Energy Tracker | Ranking Electricity Reform Across Nigeria's 36 States and the FCT</title>
+<meta name="description" content="The Nigeria Energy Tracker scores all 36 states and the FCT on electricity market readiness under the Electricity Act 2023, on 17 indicators across five pillars, from laws passed to people electrified. An initiative of Veriv Africa.">
+<link rel="canonical" href="https://nigeriaenergytracker.com/">
+<meta name="theme-color" content="#0D1E36">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nigeria Energy Tracker">
+<meta property="og:title" content="Nigeria Energy Tracker | Which states are ready for the electricity market?">
+<meta property="og:description" content="Scoring all 36 states and the FCT on electricity market readiness under the Electricity Act 2023. By Veriv Africa.">
+<meta property="og:url" content="https://nigeriaenergytracker.com/">
+<meta property="og:image" content="https://nigeriaenergytracker.com/og-image.png">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nigeria Energy Tracker">
+<meta name="twitter:description" content="Which Nigerian states are ready for the electricity market? Rankings, methodology and the 2026 report.">
+<meta name="twitter:image" content="https://nigeriaenergytracker.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nigeriaenergytracker.com/#org",
+      "name": "Nigeria Energy Tracker",
+      "url": "https://nigeriaenergytracker.com/",
+      "logo": "https://nigeriaenergytracker.com/logo.png",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Veriv Africa",
+        "url": "https://verivafrica.com/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nigeriaenergytracker.com/#site",
+      "url": "https://nigeriaenergytracker.com/",
+      "name": "Nigeria Energy Tracker",
+      "description": "Scoring all 36 Nigerian states and the FCT on electricity market readiness under the Electricity Act 2023.",
+      "publisher": { "@id": "https://nigeriaenergytracker.com/#org" },
+      "inLanguage": "en-NG"
+    },
+    {
+      "@type": "Dataset",
+      "name": "Nigeria Energy Tracker State Readiness Ranking 2026",
+      "description": "Readiness scores for electricity market reform across Nigeria's 36 states and the Federal Capital Territory.",
+      "creator": { "@id": "https://nigeriaenergytracker.com/#org" },
+      "spatialCoverage": "Nigeria",
+      "temporalCoverage": "2026",
+      "url": "https://nigeriaenergytracker.com/#rankings"
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1E36; --lime:#E4F995; --green:#3B5A4B; --white:#FFFFFF;
+    --ease-expo:cubic-bezier(0.16,1,0.3,1);
+    --t-enter:650ms; --stagger:80ms;           /* editable timing */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--navy);color:var(--white);
+    font-family:'Instrument Sans',sans-serif;font-weight:500;
+    font-variant-numeric:tabular-nums;line-height:1.3;
+  }
+  a{color:inherit;text-decoration:none}
+  .label{font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  @media(min-width:1200px){.wrap{padding:0 64px;max-width:1288px}}
+
+  /* ----- marquee frame (top strip) ----- */
+  .marquee{background:var(--lime);color:var(--navy);overflow:hidden;white-space:nowrap}
+  .marquee-track{display:inline-block;padding:9px 0;animation:marq 26s linear infinite}
+  .marquee-track span{margin:0 28px;font-weight:600;letter-spacing:.08em;font-size:12px;text-transform:uppercase}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ----- header ----- */
+  header{border-bottom:1px solid rgba(255,255,255,.18)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .lockup{height:40px;width:auto;display:block}
+  .nav-right{display:flex;align-items:center;gap:28px}
+  .nav-right a.link{font-weight:600;font-size:15px;color:rgba(255,255,255,.85)}
+  .nav-right a.link:hover{color:var(--white)}
+  .cta{
+    background:var(--white);color:var(--navy);font-weight:700;font-size:15px;
+    padding:12px 18px;display:inline-block;
+  }
+  .cta:hover{background:var(--lime)}
+  @media(max-width:760px){.nav-right a.link{display:none}}
+
+  /* ----- hero: the cropped icon ----- */
+  .hero{position:relative;overflow:hidden}
+  .hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,560px) 1fr;min-height:560px}
+  @media(max-width:860px){.hero-inner{grid-template-columns:1fr;min-height:0}}
+  .hero-copy{padding:88px 0 56px;position:relative;z-index:2}
+  h1{
+    font-weight:700;letter-spacing:-0.03em;line-height:0.95;
+    font-size:clamp(40px,6.2vw,76px);max-width:12ch;
+  }
+  .hero-sub{margin-top:22px;max-width:46ch;font-size:17px;color:rgba(255,255,255,.82)}
+  .hero-ctas{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn-solid{background:var(--white);color:var(--navy);font-weight:700;padding:16px 24px;font-size:16px}
+  .btn-solid:hover{background:var(--lime)}
+  .btn-line{border:2px solid rgba(255,255,255,.6);color:var(--white);font-weight:600;padding:14px 22px;font-size:16px}
+  .btn-line:hover{border-color:var(--white)}
+  .func{margin-top:64px;display:flex;gap:26px;flex-wrap:wrap;color:rgba(255,255,255,.55)}
+
+  .hero-icon{position:absolute;right:-6%;bottom:-32%;width:58%;min-width:420px;z-index:1;pointer-events:none}
+  @media(max-width:860px){.hero-icon{position:relative;right:auto;bottom:auto;width:120%;margin:-10px -24px -40% 30%}}
+  .hero-icon svg{width:100%;height:auto;display:block;overflow:visible}
+  .ibar{fill:var(--lime);transform:translateY(24%);opacity:0}
+  .on .ibar{animation:rise var(--t-enter) var(--ease-expo) forwards}
+  .on .b1{animation-delay:120ms}
+  .on .b2{animation-delay:calc(120ms + var(--stagger))}
+  .on .b3{animation-delay:calc(120ms + var(--stagger)*2)}
+  @keyframes rise{to{transform:translateY(0);opacity:1}}
+
+  /* the word "electricity": unlit tube, then switched on */
+  .flick{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.45)}
+  .on-word .flick{animation:wordOn .75s var(--ease-expo) 1.15s forwards}
+  @keyframes wordOn{
+    0%{color:transparent;-webkit-text-stroke-color:rgba(255,255,255,.45)}
+    38%{color:var(--lime);-webkit-text-stroke-color:transparent}
+    52%{color:rgba(228,249,149,.25)}
+    68%{color:var(--lime)}
+    100%{color:var(--lime);-webkit-text-stroke-color:transparent}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .ibar{transform:none;opacity:1;animation:none !important}
+    .marquee-track{animation:none}
+    .flick{color:var(--lime);-webkit-text-stroke:0 transparent;animation:none !important}
+  }
+
+  /* ----- ranking: draw-on chart ----- */
+  .rank{background:var(--navy);border-top:1px solid rgba(255,255,255,.18);padding:84px 0 72px}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  h2{font-weight:700;letter-spacing:-0.03em;line-height:0.95;font-size:clamp(30px,4vw,46px)}
+  .rank-table{margin-top:44px;border-top:1px solid rgba(255,255,255,.2)}
+  .rrow{
+    display:grid;grid-template-columns:52px 150px 1fr 76px;gap:18px;align-items:center;
+    padding:17px 0;border-bottom:1px solid rgba(255,255,255,.2);
+  }
+  @media(max-width:620px){.rrow{grid-template-columns:36px 92px 1fr 58px;gap:10px}}
+  .rpos{color:rgba(255,255,255,.55);font-weight:600;font-size:15px}
+  .rstate{font-weight:700;font-size:18px}
+  .rtrack{height:14px;position:relative}
+  .rbar{height:100%;width:0;background:var(--green);transform-origin:left}
+  .rrow.lead .rbar{background:var(--lime)}
+  .rrow.lead .rstate{color:var(--lime)}
+  .grown .rbar{transition:width 1.3s var(--ease-expo)}
+  .rscore{font-weight:700;font-size:18px;text-align:right}
+  .source{margin-top:18px;font-size:12px;color:rgba(255,255,255,.55);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+
+  /* ----- number block on lime ----- */
+  .count{background:var(--lime);color:var(--navy);padding:92px 0}
+  .count-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  @media(max-width:820px){.count-grid{grid-template-columns:1fr}}
+  .bignum{font-weight:700;letter-spacing:-0.03em;line-height:.85;font-size:clamp(130px,22vw,280px)}
+  .bignum small{display:block;font-size:clamp(16px,1.6vw,20px);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:18px;line-height:1.35}
+  .pillars{display:flex;flex-direction:column;gap:14px}
+  .pillar{
+    background:var(--navy);color:var(--white);padding:22px 24px;
+    box-shadow:10px 10px 0 var(--green);
+  }
+  .pillar:nth-child(2){background:var(--white);color:var(--navy);box-shadow:10px 10px 0 var(--navy)}
+  .pillar:nth-child(3){background:var(--green);color:var(--white);box-shadow:10px 10px 0 var(--navy)}
+  .pillar .label{opacity:.75}
+  .pillar p{margin-top:6px;font-size:15.5px;font-weight:500}
+
+  /* ----- launch band on green ----- */
+  .launch{background:var(--green);padding:88px 0}
+  .launch-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+  @media(max-width:820px){.launch-grid{grid-template-columns:1fr}}
+  .launch p.body{margin-top:16px;font-size:17px;color:rgba(255,255,255,.88);max-width:46ch}
+  .ticket{
+    background:var(--lime);color:var(--navy);padding:30px 30px 26px;
+    box-shadow:12px 12px 0 var(--navy);transform:rotate(-2deg);
+  }
+  .ticket .label{opacity:.7}
+  .ticket h3{font-weight:700;letter-spacing:-0.03em;font-size:clamp(24px,2.8vw,32px);line-height:1;margin-top:10px}
+  .ticket .meta{display:flex;justify-content:space-between;gap:12px;border-top:2px dashed var(--navy);margin-top:22px;padding-top:14px;font-weight:700;font-size:16px}
+
+
+  .veriv{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px;text-decoration-color:rgba(255,255,255,.4)}
+  .veriv:hover{color:var(--lime);text-decoration-color:var(--lime)}
+
+  /* sections beam in as they enter */
+  .beam{opacity:.22;transform:translateY(26px);transition:opacity .7s var(--ease-expo),transform .7s var(--ease-expo)}
+  .beam.live{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.beam{opacity:1;transform:none;transition:none}}
+
+  /* switch-on word, reusable on navy */
+  .flick2{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.45)}
+  .live .flick2{animation:wordOn .75s var(--ease-expo) .25s forwards}
+
+  /* ---------- explore the data ---------- */
+  .explore{background:var(--navy);border-top:1px solid rgba(255,255,255,.18);padding:84px 0 80px}
+  .ex-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .sorts{display:flex;gap:0;border:1.5px solid rgba(255,255,255,.35)}
+  .sorts button{background:none;border:none;color:rgba(255,255,255,.7);font:600 12px/1 'Instrument Sans',sans-serif;
+    letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+  .sorts button.active{background:var(--white);color:var(--navy)}
+  .ex-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;margin-top:36px;align-items:start}
+  @media(max-width:880px){.ex-grid{grid-template-columns:1fr}}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:8px}
+  .tile{aspect-ratio:1/1;border:none;cursor:pointer;background:var(--green);color:var(--white);
+    display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;
+    padding:8px;font-family:'Instrument Sans',sans-serif}
+  .tile .tc{font-weight:700;font-size:14px;letter-spacing:.04em}
+  .tile .tn{font-weight:600;font-size:11px;font-variant-numeric:tabular-nums;opacity:.85}
+  .tile:hover{outline:2px solid var(--white);outline-offset:-2px}
+  .tile.sel{background:var(--lime);color:var(--navy)}
+  .tile.off{opacity:.08 !important;pointer-events:none}
+  .sharebtn{margin-top:22px;background:var(--navy);color:var(--white);border:none;cursor:pointer;
+    font:700 14px/1 'Instrument Sans',sans-serif;padding:14px 20px;box-shadow:8px 8px 0 var(--green);
+    display:inline-block}
+  .sharebtn:hover{background:var(--lime);color:var(--navy)}
+  .sharebtn:active{transform:translate(3px,3px);box-shadow:5px 5px 0 var(--green)}
+  .panel{background:var(--white);color:var(--navy);padding:26px 26px 24px;box-shadow:12px 12px 0 var(--green)}
+  .panel .label{opacity:.6}
+  .p-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .p-state{font-weight:700;letter-spacing:-0.03em;font-size:clamp(28px,3.4vw,40px);line-height:1}
+  .p-score{font-weight:700;font-size:clamp(28px,3.4vw,40px);letter-spacing:-0.02em}
+  .p-score small{font-size:.5em;font-weight:600;opacity:.6}
+  .p-meta{margin-top:4px;font-weight:600;font-size:13px;color:rgba(13,30,54,.6);letter-spacing:.08em;text-transform:uppercase}
+  .pillar-rows{margin-top:22px;display:flex;flex-direction:column;gap:13px}
+  .prow{display:grid;grid-template-columns:150px 1fr 38px;gap:12px;align-items:center}
+  @media(max-width:460px){.prow{grid-template-columns:104px 1fr 34px}}
+  .prow .pl{font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(13,30,54,.75)}
+  .segs{display:flex;gap:5px}
+  .seg{height:16px;flex:1;background:rgba(13,30,54,.12);transform:scaleX(0);transform-origin:left}
+  .seg.on{background:var(--navy)}
+  .seg.full{background:var(--lime);outline:1.5px solid var(--navy);outline-offset:-1.5px}
+  .panel.play .seg{transition:transform .5s var(--ease-expo);transform:scaleX(1)}
+  .pv{font-weight:700;font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
+  .p-src{margin-top:20px;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,30,54,.45)}
+
+  .wsrc{grid-column:3;justify-self:start;font-weight:600;font-size:11px;letter-spacing:.06em;
+    color:rgba(13,30,54,.5);text-decoration:underline;text-underline-offset:3px}
+  .wsrc:hover{color:var(--navy)}
+
+  /* ---------- highlights: the wire ---------- */
+  .pulse{background:var(--white);color:var(--navy);padding:84px 0 80px}
+  .pulse h2{color:var(--navy)}
+  .wire{margin-top:36px;border-top:1.5px solid var(--navy);position:relative;padding-left:4px}
+  .wire-svg{position:absolute;left:0;top:0;width:24px;height:100%;overflow:visible}
+  #wirePath{stroke:rgba(13,30,54,.15);stroke-width:3}
+  #wireLive{stroke:var(--lime);stroke-width:3;filter:none}
+  .wrow{display:grid;grid-template-columns:26px 150px 1fr;gap:18px;align-items:baseline;position:relative;
+    padding:18px 0;border-bottom:1.5px solid rgba(13,30,54,.15)}
+  @media(max-width:620px){.wrow{grid-template-columns:18px 92px 1fr;gap:10px}}
+  .dot{width:12px;height:12px;background:rgba(13,30,54,.15);align-self:center}
+  .wrow.live .dot{animation:dotOn .5s var(--ease-expo) forwards}
+  @keyframes dotOn{0%{background:rgba(13,30,54,.15)}45%{background:var(--lime)}60%{background:rgba(13,30,54,.15)}100%{background:var(--lime)}}
+  .wtag{font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,30,54,.55)}
+  .wtxt{font-weight:600;font-size:clamp(15px,1.8vw,18px);line-height:1.4}
+  .p-note{margin-top:22px;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(13,30,54,.45)}
+
+
+  ::selection{background:var(--lime);color:var(--navy)}
+
+  /* "wire" wears its own cable */
+  .wireword{position:relative;display:inline-block;padding-bottom:.12em}
+  .wu{position:absolute;left:-2%;bottom:-.08em;width:104%;height:.42em;overflow:visible}
+  .wu path{fill:none;stroke-width:3.5;stroke-linecap:round}
+  .wu-base{stroke:rgba(13,30,54,.18)}
+  .wu-live{stroke:var(--lime);stroke-dasharray:100;stroke-dashoffset:100}
+  .beam.live .wu-live{animation:wuDraw .9s var(--ease-expo) .25s forwards}
+  @keyframes wuDraw{to{stroke-dashoffset:0}}
+
+  /* pillar strips drop and land on each other */
+  @media(prefers-reduced-motion: no-preference){
+    .count .beam .pillar{opacity:0;transform:translateY(-90px);transform-origin:bottom center}
+    .count .beam.live .pillar{
+      animation:pdrop .6s cubic-bezier(.22,1,.36,1) calc(.1s + var(--i)*.16s) both,
+                pbump .3s ease-out calc(1.35s + (4 - var(--i))*.07s) both;
+    }
+    .count .beam.live .pillar:nth-child(1){--i:0}
+    .count .beam.live .pillar:nth-child(2){--i:1}
+    .count .beam.live .pillar:nth-child(3){--i:2}
+    .count .beam.live .pillar:nth-child(4){--i:3}
+    .count .beam.live .pillar:nth-child(5){--i:4}
+    .count .beam .pillar{--i:0}
+  }
+  @keyframes pdrop{
+    0%{opacity:0;transform:translateY(-90px) scaleY(1)}
+    58%{opacity:1;transform:translateY(0) scaleY(1)}
+    74%{transform:translateY(5px) scaleY(.955)}
+    88%{transform:translateY(-2px) scaleY(1.01)}
+    100%{opacity:1;transform:translateY(0) scaleY(1)}
+  }
+  @keyframes pbump{
+    0%,100%{transform:translateY(0) scaleY(1)}
+    45%{transform:translateY(3px) scaleY(.968)}
+  }
+
+  /* ----- footer ----- */
+  footer{padding:46px 0 58px;border-top:1px solid rgba(255,255,255,.18)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .foot-left{display:flex;align-items:center;gap:16px}
+  .foot svg{height:34px;width:auto}
+  .foot .fine{color:rgba(255,255,255,.6);font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Tracking energy reform across Nigeria</span><span>36 states and the FCT</span><span>Electricity Act 2023</span><span>nigeriaenergytracker.com</span>
+    <span>Tracking energy reform across Nigeria</span><span>36 states and the FCT</span><span>Electricity Act 2023</span><span>nigeriaenergytracker.com</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" aria-label="Nigeria Energy Tracker home"><svg class="lockup" viewBox="0 0 1299 577" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_794_4744)">
+<path d="M576.549 0V501.733H406.16L423.754 576.549H250.6L173.154 247.184V576.54H0V232.625H169.731L132.624 74.816H305.774L403.395 489.968V0H576.549Z" fill="#E4F995"/>
+<path d="M760.279 133.826V0H788.822V138.567H733.373L687.742 4.74045V138.567H659.2V0H714.83L760.279 133.826Z" fill="white"/>
+<path d="M834.668 138.567H806.854V39.5645H834.668V138.567ZM835.214 26.2548H806.49V0H835.214V26.2548Z" fill="white"/>
+<path d="M919.791 39.5645L947.424 40.2938V137.473C947.424 146.771 945.061 154.429 940.334 160.446C935.607 166.462 929.608 170.656 922.336 173.209C915.064 175.761 907.247 177.037 898.884 177.037C890.703 177.037 883.25 175.761 876.341 173.391C869.433 171.021 863.615 167.374 859.071 162.451C854.526 157.529 851.799 151.33 850.89 144.037H878.886C879.795 148.595 882.159 152.059 885.795 154.429C889.431 156.799 893.794 157.893 898.884 157.893C905.065 157.893 910.156 156.252 913.973 152.788C917.791 149.324 919.791 144.219 919.791 137.473V116.323C917.064 122.705 912.701 127.81 906.883 131.821C901.066 135.832 894.521 137.838 887.067 137.838C879.068 137.838 871.978 135.65 865.797 131.456C859.616 127.263 854.889 121.428 851.435 113.771C847.981 106.113 846.345 97.3614 846.345 87.5159C846.345 77.6703 847.981 68.9188 851.435 61.2611C854.889 53.6035 859.616 47.7691 865.797 43.5756C871.978 39.3821 879.068 37.1942 887.067 37.1942C895.248 37.1942 902.156 39.3821 907.792 43.9403C913.428 48.4984 917.427 54.3328 919.791 61.4434V39.5645ZM914.882 111.218H914.701C918.7 105.748 920.7 98.0907 920.7 88.2452C920.7 78.3996 918.7 70.742 914.701 65.2723C910.701 59.8025 905.065 57.0676 897.612 57.0676C890.158 57.0676 884.522 59.8025 880.523 65.2723C876.523 70.742 874.523 78.3996 874.523 88.2452C874.523 98.0907 876.523 105.748 880.523 111.218C884.522 116.688 890.34 119.423 897.793 119.423C905.247 119.423 910.883 116.688 914.882 111.218Z" fill="white"/>
+<path d="M1057.27 97.3614H986.552C987.461 105.384 989.824 111.4 993.642 115.594C997.459 119.787 1002.37 121.793 1008.37 121.793C1013.46 121.793 1017.46 120.699 1020.55 118.693C1023.64 116.688 1026 113.588 1027.82 109.395H1055.82C1052.54 119.787 1046.73 127.627 1038.55 132.915C1030.36 138.202 1020.18 140.937 1008.19 140.937C998.187 140.937 989.46 138.749 981.825 134.373C974.189 129.998 968.372 123.799 964.191 115.959C960.009 108.119 958.009 99.1847 958.009 89.1568C958.009 79.1289 960.191 70.195 964.372 62.3551C968.554 54.5151 974.553 48.4984 982.189 44.1226C989.824 39.7468 998.55 37.5589 1008.37 37.5589C1018.37 37.5589 1027.09 39.7468 1034.55 44.1226C1042 48.4984 1047.82 54.5151 1051.82 62.3551C1055.82 70.195 1057.82 79.3113 1057.82 89.7038C1057.82 92.074 1057.63 94.6265 1057.27 97.3614ZM994.005 61.9904L993.823 62.1727C990.006 65.8192 987.642 71.4713 986.552 78.9466H1029.64C1028.91 72.0183 1026.55 66.5485 1022.73 62.5374C1018.91 58.5262 1014 56.5207 1008.19 56.5207C1002.55 56.5207 997.823 58.3439 994.005 61.9904Z" fill="white"/>
+<path d="M1096.2 65.4546L1096.38 65.2723C1098.38 56.8853 1102.2 50.1393 1107.65 45.0342C1113.1 39.9291 1120.38 37.3766 1129.28 37.3766V64.7253H1122.19C1113.29 64.7253 1106.74 66.3662 1102.56 69.8304C1098.38 73.2945 1096.38 79.1289 1096.38 87.3336V138.567H1068.56V39.5645H1096.2V65.4546Z" fill="white"/>
+<path d="M1164.56 138.567H1136.74V39.5645H1164.56V138.567ZM1165.1 26.2548H1136.38V0H1165.1V26.2548Z" fill="white"/>
+<path d="M1250.23 42.4817L1250.41 43.0286C1257.14 46.3105 1262.23 50.8686 1265.68 56.703C1269.13 62.5374 1270.77 69.2834 1270.77 76.7587V139.114H1243.32V120.517C1240.23 127.08 1236.05 132.185 1230.96 135.832C1225.87 139.478 1218.96 141.302 1210.41 141.302C1204.05 141.302 1198.23 139.843 1192.96 137.108C1187.69 134.373 1183.51 130.545 1180.42 125.622C1177.33 120.699 1175.87 115.047 1175.87 108.848C1175.87 98.6377 1179.69 91.3447 1187.33 86.9689C1194.96 82.5931 1204.78 79.8582 1216.78 78.7643L1242.77 76.2117V74.5708C1242.77 69.2834 1241.32 64.9076 1238.23 61.6258C1235.14 58.3439 1230.78 56.703 1225.14 56.703C1220.05 56.703 1216.05 57.9793 1212.96 60.5318C1209.87 63.0844 1208.05 66.1839 1207.5 70.0127H1179.51C1180.42 63.2667 1182.96 57.4323 1186.96 52.5095C1190.96 47.5868 1196.23 43.9403 1202.78 41.3877C1209.32 38.8352 1216.78 37.5589 1225.14 37.5589C1235.14 37.5589 1243.5 39.1998 1250.23 42.4817ZM1233.14 121.064L1232.96 120.881C1236.23 118.511 1238.77 115.229 1240.41 111.036C1242.05 106.842 1242.96 102.102 1242.96 96.8144V92.8033L1227.14 94.4442C1222.41 94.9912 1218.41 95.7205 1215.32 96.6321C1212.23 97.5437 1209.69 99.0023 1207.69 101.008C1205.69 103.013 1204.6 105.748 1204.6 109.213C1204.6 112.312 1205.32 115.047 1206.78 117.417C1208.23 119.787 1210.23 121.611 1212.78 122.887C1215.32 124.163 1218.23 124.71 1221.32 124.71C1225.87 124.71 1229.87 123.434 1233.14 121.064Z" fill="white"/>
+<path d="M687.924 261.818V296.825H755.916V320.892H659.2V182.325H754.28V206.392H687.924V237.751H753.007V261.818H687.924Z" fill="white"/>
+<path d="M847.017 224.624L846.653 224.442C851.561 227.724 855.197 232.282 857.561 238.116C859.924 243.951 861.197 250.514 861.197 257.99V320.709H833.382V264.006C833.382 255.619 831.927 249.42 828.837 245.227C825.746 241.033 821.201 239.028 815.202 239.028C809.384 239.028 804.84 241.033 801.749 245.227C798.658 249.42 797.022 255.802 797.022 264.371V320.709H769.207V221.707H796.84V241.945C799.204 235.199 803.022 229.729 808.294 225.718C813.566 221.707 820.292 219.701 828.473 219.701C835.927 219.701 842.108 221.342 847.017 224.624Z" fill="white"/>
+<path d="M970.803 279.686H900.084C900.993 287.708 903.357 293.725 907.174 297.919C910.992 302.112 915.901 304.118 921.9 304.118C926.99 304.118 930.99 303.024 934.08 301.018C937.171 299.013 939.534 295.913 941.352 291.72H969.349C966.077 302.112 960.259 309.952 952.078 315.239C943.897 320.527 933.717 323.262 921.718 323.262C911.719 323.262 902.993 321.074 895.358 316.698C887.722 312.322 881.905 306.123 877.723 298.283C873.542 290.443 871.542 281.509 871.542 271.482C871.542 261.454 873.724 252.52 877.905 244.68C882.086 236.84 888.086 230.823 895.721 226.447C903.357 222.072 912.083 219.884 921.9 219.884C931.899 219.884 940.625 222.072 948.079 226.447C955.532 230.823 961.35 236.84 965.35 244.68C969.349 252.52 971.349 261.636 971.349 272.028C971.349 274.399 971.167 276.951 970.803 279.686ZM907.538 244.315L907.356 244.497C903.538 248.144 901.175 253.796 900.084 261.271H943.17C942.443 254.343 940.08 248.873 936.262 244.862C932.444 240.851 927.536 238.845 921.718 238.845C916.082 238.845 911.356 240.669 907.538 244.315Z" fill="white"/>
+<path d="M1009.73 247.779L1009.91 247.597C1011.91 239.21 1015.73 232.464 1021.18 227.359C1026.64 222.254 1033.91 219.701 1042.82 219.701V247.05H1035.73C1026.82 247.05 1020.27 248.691 1016.09 252.155C1011.91 255.619 1009.91 261.454 1009.91 269.658V320.892H982.096V221.889H1009.73V247.779Z" fill="white"/>
+<path d="M1117.58 221.889L1145.21 222.618V319.798C1145.21 329.096 1142.85 336.754 1138.12 342.771C1133.4 348.787 1127.4 352.981 1120.13 355.533C1112.85 358.086 1105.04 359.362 1096.67 359.362C1088.49 359.362 1081.04 358.086 1074.13 355.716C1067.22 353.345 1061.41 349.699 1056.86 344.776C1052.32 339.853 1049.59 333.654 1048.68 326.361H1076.68C1077.59 330.919 1079.95 334.384 1083.58 336.754C1087.22 339.124 1091.58 340.218 1096.67 340.218C1102.86 340.218 1107.95 338.577 1111.76 335.113C1115.58 331.649 1117.58 326.544 1117.58 319.798V298.648C1114.85 305.029 1110.49 310.134 1104.67 314.146C1098.86 318.157 1092.31 320.162 1084.86 320.162C1076.86 320.162 1069.77 317.974 1063.59 313.781C1057.41 309.587 1052.68 303.753 1049.22 296.095C1045.77 288.438 1044.13 279.686 1044.13 269.841C1044.13 259.995 1045.77 251.243 1049.22 243.586C1052.68 235.928 1057.41 230.094 1063.59 225.9C1069.77 221.707 1076.86 219.519 1084.86 219.519C1093.04 219.519 1099.95 221.707 1105.58 226.265C1111.22 230.823 1115.22 236.658 1117.58 243.768V221.889ZM1112.67 293.543H1112.49C1116.49 288.073 1118.49 280.415 1118.49 270.57C1118.49 260.724 1116.49 253.067 1112.49 247.597C1108.49 242.127 1102.86 239.392 1095.4 239.392C1087.95 239.392 1082.31 242.127 1078.31 247.597C1074.31 253.067 1072.31 260.724 1072.31 270.57C1072.31 280.415 1074.31 288.073 1078.31 293.543C1082.31 299.013 1088.13 301.747 1095.58 301.747C1103.04 301.747 1108.67 299.013 1112.67 293.543Z" fill="white"/>
+<path d="M1203.79 305.029L1227.43 221.889H1256.7L1217.79 356.627H1189.25L1202.34 310.681H1178.89L1149.8 221.889H1177.8L1203.79 305.029Z" fill="white"/>
+<path d="M658.913 364.755H773.446V388.822H730.542V503.322H701.818V388.822H658.913V364.755Z" fill="white"/>
+<path d="M789.015 430.21L789.197 430.028C791.197 421.641 795.014 414.895 800.468 409.79C805.922 404.685 813.194 402.132 822.102 402.132V429.481H815.012C806.104 429.481 799.559 431.122 795.378 434.586C791.197 438.05 789.197 443.884 789.197 452.089V503.322H761.382V404.32H789.015V430.21Z" fill="white"/>
+<path d="M896.879 407.237L897.061 407.784C903.787 411.066 908.878 415.624 912.332 421.458C915.786 427.293 917.422 434.039 917.422 441.514V503.869H889.971V485.272C886.88 491.836 882.699 496.941 877.608 500.587C872.518 504.234 865.61 506.057 857.065 506.057C850.702 506.057 844.885 504.599 839.613 501.864C834.341 499.129 830.159 495.3 827.069 490.377C823.978 485.454 822.524 479.802 822.524 473.603C822.524 463.393 826.342 456.1 833.977 451.724C841.613 447.349 851.43 444.614 863.428 443.52L889.425 440.967V439.326C889.425 434.039 887.971 429.663 884.88 426.381C881.79 423.099 877.427 421.458 871.791 421.458C866.701 421.458 862.701 422.735 859.611 425.287C856.52 427.84 854.702 430.939 854.157 434.768H826.16C827.069 428.022 829.614 422.188 833.614 417.265C837.613 412.342 842.885 408.696 849.43 406.143C855.975 403.591 863.428 402.314 871.791 402.314C881.79 402.314 890.152 403.955 896.879 407.237ZM879.79 485.819L879.608 485.637C882.881 483.267 885.426 479.985 887.062 475.791C888.698 471.598 889.607 466.857 889.607 461.57V457.559L873.791 459.2C869.064 459.747 865.064 460.476 861.974 461.388C858.883 462.299 856.338 463.758 854.338 465.763C852.339 467.769 851.248 470.504 851.248 473.968C851.248 477.067 851.975 479.802 853.429 482.173C854.884 484.543 856.884 486.366 859.429 487.642C861.974 488.919 864.883 489.466 867.973 489.466C872.518 489.466 876.518 488.189 879.79 485.819Z" fill="white"/>
+<path d="M951.275 499.129L951.093 499.493C943.276 495.118 937.276 489.101 933.095 481.261C928.914 473.421 926.732 464.305 926.732 453.912C926.732 443.702 928.914 434.768 933.277 426.928C937.64 419.088 943.639 413.072 951.457 408.696C959.274 404.32 968.182 402.132 978.181 402.132C986.725 402.132 994.361 403.591 1001.09 406.69C1007.81 409.79 1013.45 414.165 1017.81 419.818C1022.18 425.47 1025.08 432.216 1026.36 439.873H998.36C997.088 434.221 994.724 429.663 991.452 426.199C988.18 422.735 983.816 420.911 978.362 420.911C971.091 420.911 965.455 423.829 961.455 429.663C957.456 435.497 955.456 443.52 955.456 453.73C955.456 464.122 957.456 472.145 961.455 477.979C965.455 483.814 971.091 486.731 978.181 486.731C988.907 486.731 995.997 480.532 999.269 468.316H1027.27C1025.63 476.156 1022.54 482.902 1017.99 488.554C1013.45 494.206 1007.81 498.399 1000.91 501.317C993.997 504.234 986.362 505.693 977.999 505.693C968 505.693 959.092 503.505 951.275 499.129Z" fill="white"/>
+<path d="M1092.95 448.26L1134.22 503.322H1100.95L1063.87 453.183V503.322H1036.05V364.755H1063.87V444.249L1099.5 404.32H1132.4L1092.95 448.26Z" fill="white"/>
+<path d="M1226.99 462.117H1156.27C1157.18 470.139 1159.54 476.156 1163.36 480.349C1167.18 484.543 1172.08 486.548 1178.08 486.548C1183.17 486.548 1187.17 485.454 1190.26 483.449C1193.35 481.443 1195.72 478.344 1197.54 474.15H1225.53C1222.26 484.543 1216.44 492.383 1208.26 497.67C1200.08 502.958 1189.9 505.693 1177.9 505.693C1167.9 505.693 1159.18 503.505 1151.54 499.129C1143.91 494.753 1138.09 488.554 1133.91 480.714C1129.73 472.874 1127.73 463.94 1127.73 453.912C1127.73 443.884 1129.91 434.95 1134.09 427.111C1138.27 419.271 1144.27 413.254 1151.91 408.878C1159.54 404.502 1168.27 402.314 1178.08 402.314C1188.08 402.314 1196.81 404.502 1204.26 408.878C1211.72 413.254 1217.53 419.271 1221.53 427.111C1225.53 434.95 1227.53 444.067 1227.53 454.459C1227.53 456.829 1227.35 459.382 1226.99 462.117ZM1163.72 426.746L1163.54 426.928C1159.72 430.575 1157.36 436.227 1156.27 443.702H1199.35C1198.63 436.774 1196.26 431.304 1192.45 427.293C1188.63 423.282 1183.72 421.276 1177.9 421.276C1172.27 421.276 1167.54 423.099 1163.72 426.746Z" fill="white"/>
+<path d="M1265.91 430.21L1266.1 430.028C1268.09 421.641 1271.91 414.895 1277.37 409.79C1282.82 404.685 1290.09 402.132 1299 402.132V429.481H1291.91C1283 429.481 1276.46 431.122 1272.28 434.586C1268.09 438.05 1266.1 443.884 1266.1 452.089V503.322H1238.28V404.32H1265.91V430.21Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_794_4744">
+<rect width="1299" height="577" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+</a>
+    <nav class="nav-right">
+      <a class="link" href="#rankings">Rankings</a>
+      <a class="link" href="#pulse">Highlights</a>
+      <a class="link" href="#launch">2026 Report</a>
+      <a class="cta" href="#explore">Explore the data</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1>Which states are ready for the <span class="flick" id="flickWord">electricity</span> market?</h1>
+      <p class="hero-sub">The Electricity Act 2023 split one national power market into thirty-seven: the 36 states and the FCT. We score each one on 17 indicators across five pillars, from laws passed to people electrified.</p>
+      <div class="hero-ctas">
+        <a class="btn-solid" href="#rankings">See the ranking</a>
+        <a class="btn-line" href="#launch">Download the report</a>
+      </div>
+      <div class="func label">
+        <span>Updated Q3 2026</span><a class="veriv" href="https://www.verivafrica.com" target="_blank" rel="noopener">By Veriv Africa</a><span>Abuja, Nigeria</span>
+      </div>
+    </div>
+    <div class="hero-icon" id="heroIcon">
+      <svg viewBox="0 0 995 905" aria-hidden="true"><path class="ibar b1" d="M298.593 365.146H0V904.99H298.593V365.146Z"/><path class="ibar b2" d="M730.739 904.999H432.146L228.7 117.436H527.292L730.739 904.999Z"/><path class="ibar b3" d="M994.225 0H695.632V787.564H994.225V0Z"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="rank" id="rankings">
+  <div class="wrap beam">
+    <div class="sec-head">
+      <h2>The ranking, top five</h2>
+      <span class="label" style="color:rgba(255,255,255,.55)">Share of 17 indicators met</span>
+    </div>
+    <div class="rank-table" id="rankTable">
+      <div class="rrow lead"><span class="rpos">01</span><span class="rstate">Lagos</span><div class="rtrack"><div class="rbar" data-w="88%"></div></div><span class="rscore" data-n="88.2">0.0</span></div>
+      <div class="rrow"><span class="rpos">02</span><span class="rstate">Edo</span><div class="rtrack"><div class="rbar" data-w="82%"></div></div><span class="rscore" data-n="82.4">0.0</span></div>
+      <div class="rrow"><span class="rpos">03</span><span class="rstate">Niger</span><div class="rtrack"><div class="rbar" data-w="76%"></div></div><span class="rscore" data-n="76.5">0.0</span></div>
+      <div class="rrow"><span class="rpos">04</span><span class="rstate">Enugu</span><div class="rtrack"><div class="rbar" data-w="76%"></div></div><span class="rscore" data-n="76.5">0.0</span></div>
+      <div class="rrow"><span class="rpos">05</span><span class="rstate">Delta</span><div class="rtrack"><div class="rbar" data-w="76%"></div></div><span class="rscore" data-n="76.5">0.0</span></div>
+    </div>
+    <div class="source">Source: Nigeria State Electricity Tracker and Ranking Report, Veriv Africa, 2026 · Full state profiles in the report</div>
+  </div>
+</section>
+
+<section class="explore" id="explore">
+  <div class="wrap beam">
+    <div class="ex-head">
+      <h2>Explore the <span class="flick2">data</span>, state by state</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div class="sorts" role="group" aria-label="Lens">
+          <button class="active" data-lens="all">Overall</button>
+          <button data-lens="mob">Clean mobility</button>
+        </div>
+        <div class="sorts" role="group" aria-label="Sort states">
+          <button class="active" data-sort="rank">By rank</button>
+          <button data-sort="az">A to Z</button>
+        </div>
+        <div class="sorts" role="group" aria-label="Region">
+          <button class="active" data-reg="all">All</button>
+          <button data-reg="North Central" title="North Central">NC</button>
+          <button data-reg="North East" title="North East">NE</button>
+          <button data-reg="North West" title="North West">NW</button>
+          <button data-reg="South East" title="South East">SE</button>
+          <button data-reg="South South" title="South South">SS</button>
+          <button data-reg="South West" title="South West">SW</button>
+        </div>
+      </div>
+    </div>
+    <div class="ex-grid">
+      <div class="tiles" id="tiles"></div>
+      <div class="panel" id="panel">
+        <div class="p-top"><div class="p-state" id="pState">Lagos</div><div class="p-score"><span id="pScore">15</span><small>/17</small></div></div>
+        <div class="p-meta" id="pMeta">Rank 01 · South West</div>
+        <div class="pillar-rows" id="pRows"></div>
+        <button class="sharebtn" id="shareBtn">Share this scorecard</button>
+        <div class="p-src">Indicators met per pillar · Nigeria Energy Tracker 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pulse" id="pulse">
+  <div class="wrap beam">
+    <div class="sec-head"><h2>On the <span class="wireword">wire<svg class="wu" viewBox="0 0 200 30" aria-hidden="true" preserveAspectRatio="none"><path class="wu-base" pathLength="100" d="M4,6 C58,28 142,28 196,6"/><path class="wu-live" pathLength="100" d="M4,6 C58,28 142,28 196,6"/></svg></span></h2><span class="label" style="color:rgba(13,30,54,.5)">What moved this quarter</span></div>
+    <div class="wire" id="wire">
+      <svg class="wire-svg" aria-hidden="true" preserveAspectRatio="none"><path id="wirePath" fill="none"/><path id="wireLive" fill="none"/></svg>
+      <div class="wrow"><span class="dot"></span><span class="wtag">Transmission</span><span class="wtxt">Federal government approves a new Eastern-Western transmission grid to expand national capacity.</span><a class="wsrc" href="https://newscentraltv.com/nigeria-approves-new-east-west-power-grid/" target="_blank" rel="noopener">newscentraltv.com</a></div>
+      <div class="wrow"><span class="dot"></span><span class="wtag">Regulation</span><span class="wtxt">NERC dissolves the board of Kaduna Electric as oversight tightens across underperforming DisCos.</span><a class="wsrc" href="https://www.thecable.ng/just-in-nerc-dissolves-kaduna-disco-board-over-n456bn/" target="_blank" rel="noopener">thecable.ng</a></div>
+      <div class="wrow"><span class="dot"></span><span class="wtag">Transfers</span><span class="wtxt">Regulatory oversight lands in the states: Abia, Bayelsa and Nasarawa complete their NERC handovers, with Gombe next in line.</span><a class="wsrc" href="https://nerc.gov.ng/" target="_blank" rel="noopener">nerc.gov.ng</a></div>
+      <div class="wrow"><span class="dot"></span><span class="wtag">Markets</span><span class="wtxt">The national grid stands to lose an estimated N5.6 trillion in revenue as premium customers exit to state and embedded supply.</span><a class="wsrc" href="https://theelectricityhub.com/national-grid-criss-worsens-as-premium-users-exit/" target="_blank" rel="noopener">theelectricityhub.com</a></div>
+      <div class="wrow"><span class="dot"></span><span class="wtag">Renewables</span><span class="wtxt">Four DisCos partner with RMI to expand renewable embedded generation inside their networks.</span><a class="wsrc" href="https://rmi.org/resources/increasing-affordable-electricity-supply-in-nigeria-through-embedded-generation" target="_blank" rel="noopener">rmi.org</a></div>
+      <div class="wrow"><span class="dot"></span><span class="wtag">Consolidation</span><span class="wtxt">Excel Electricity becomes a subsidiary of Eko DisCo as Lagos's market keeps reorganising.</span><a class="wsrc" href="https://championnews.com.ng/2025/10/08/eko-disco-registers-excel-electricity-distribution-company-as" target="_blank" rel="noopener">championnews.com.ng</a></div>
+    </div>
+    <div class="p-note">Curated from the tracker's highlight feed · Full sourcing in the quarterly report</div>
+  </div>
+</section>
+
+<section class="count" id="method">
+  <div class="wrap count-grid beam">
+    <div class="bignum"><span id="counter" data-n="37">0</span><small>Markets scored: 36 states<br>and the FCT, on 17 indicators</small></div>
+    <div class="pillars">
+      <div class="pillar"><div class="label">Policy formulation</div><p>A state electricity law, passed and aligned with the national framework.</p></div>
+      <div class="pillar"><div class="label">Regulatory setup</div><p>A state commission with tariff and licensing frameworks in place.</p></div>
+      <div class="pillar"><div class="label">Infrastructure</div><p>Generation, transmission and renewable projects on the ground.</p></div>
+      <div class="pillar" style="background:var(--white);color:var(--navy);box-shadow:10px 10px 0 var(--green)"><div class="label">Market participation</div><p>Licensed generation, transmission and renewable companies entering.</p></div>
+      <div class="pillar" style="background:var(--navy);color:var(--white);box-shadow:10px 10px 0 var(--green)"><div class="label">Performance</div><p>Grid reliance falling, access rising, clean transport taking hold.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="launch" id="launch">
+  <div class="wrap launch-grid beam">
+    <div>
+      <h2>Beyond the Electricity Act</h2>
+      <p class="body">Lagos leads, with Edo, Niger, Enugu and Delta close behind. The full report carries every state's scorecard, the methodology, and what must change next. Launching in Abuja; the download lives here.</p>
+    </div>
+    <div class="ticket">
+      <div class="label">Launch · Report 2026</div>
+      <h3>Nigeria Energy Tracker and Ranking Report</h3>
+      <div class="meta"><span>October 2026</span><span>Abuja</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-left">
+      <svg viewBox="0 0 995 905" aria-hidden="true"><g fill="#E4F995"><path d="M298.593 365.146H0V904.99H298.593V365.146Z"/><path d="M730.739 904.999H432.146L228.7 117.436H527.292L730.739 904.999Z"/><path d="M994.225 0H695.632V787.564H994.225V0Z"/></g></svg>
+      <span class="fine">Nigeria Energy Tracker · An initiative of <a class="veriv" href="https://www.verivafrica.com" target="_blank" rel="noopener">Veriv Africa</a></span>
+    </div>
+    <span class="fine">nigeriaenergytracker.com · info@nigeriaenergytracker.com</span>
+  </div>
+</footer>
+
+<script>
+
+  // ---------- explore the data ----------
+  const STATES = [{"n":"Lagos","c":"LAG","r":"South West","p":[3,2,3,3,4],"t":15,"rank":1,"m":3},{"n":"Edo","c":"EDO","r":"South South","p":[3,3,2,3,3],"t":14,"rank":2,"m":1},{"n":"Delta","c":"DEL","r":"South South","p":[3,0,2,3,5],"t":13,"rank":3,"m":0},{"n":"Enugu","c":"ENU","r":"South East","p":[3,3,2,3,2],"t":13,"rank":4,"m":2},{"n":"Niger","c":"NIG","r":"North Central","p":[2,3,2,3,3],"t":13,"rank":5,"m":0},{"n":"Abia","c":"ABI","r":"South East","p":[3,1,2,2,4],"t":12,"rank":6,"m":2},{"n":"Ekiti","c":"EKI","r":"South West","p":[2,3,2,3,2],"t":12,"rank":7,"m":0},{"n":"Imo","c":"IMO","r":"South East","p":[2,3,2,3,2],"t":12,"rank":8,"m":1},{"n":"Kaduna","c":"KAD","r":"North West","p":[2,1,2,3,4],"t":12,"rank":9,"m":1},{"n":"Ogun","c":"OGN","r":"South West","p":[3,1,2,3,3],"t":12,"rank":10,"m":1},{"n":"Cross River","c":"CRS","r":"South South","p":[3,1,2,3,2],"t":11,"rank":11,"m":2},{"n":"Gombe","c":"GOM","r":"North East","p":[3,1,2,3,2],"t":11,"rank":12,"m":0},{"n":"Kano","c":"KAN","r":"North West","p":[2,1,2,3,3],"t":11,"rank":13,"m":1},{"n":"Nasarawa","c":"NAS","r":"North Central","p":[2,1,2,3,3],"t":11,"rank":14,"m":2},{"n":"Akwa Ibom","c":"AKW","r":"South South","p":[3,0,2,2,3],"t":10,"rank":15,"m":0},{"n":"Bayelsa","c":"BAY","r":"South South","p":[3,1,2,3,1],"t":10,"rank":16,"m":0},{"n":"Ebonyi","c":"EBO","r":"South East","p":[2,0,2,3,3],"t":10,"rank":17,"m":0},{"n":"Ondo","c":"OND","r":"South West","p":[3,1,2,3,1],"t":10,"rank":18,"m":0},{"n":"Oyo","c":"OYO","r":"South West","p":[2,1,2,3,2],"t":10,"rank":19,"m":0},{"n":"Adamawa","c":"ADA","r":"North East","p":[2,0,2,2,3],"t":9,"rank":20,"m":1},{"n":"FCT","c":"FCT","r":"North Central","p":[0,1,2,3,3],"t":9,"rank":21,"m":3},{"n":"Jigawa","c":"JIG","r":"North West","p":[2,1,2,3,1],"t":9,"rank":22,"m":0},{"n":"Kebbi","c":"KEB","r":"North West","p":[3,1,2,3,0],"t":9,"rank":23,"m":0},{"n":"Kwara","c":"KWA","r":"North Central","p":[2,0,2,3,2],"t":9,"rank":24,"m":2},{"n":"Plateau","c":"PLA","r":"North Central","p":[2,1,2,3,1],"t":9,"rank":25,"m":0},{"n":"Taraba","c":"TAR","r":"North East","p":[3,0,2,3,1],"t":9,"rank":26,"m":0},{"n":"Benue","c":"BEN","r":"North Central","p":[3,0,2,2,1],"t":8,"rank":27,"m":2},{"n":"Katsina","c":"KAT","r":"North West","p":[2,0,2,3,1],"t":8,"rank":28,"m":0},{"n":"Kogi","c":"KOG","r":"North Central","p":[3,1,1,3,0],"t":8,"rank":29,"m":1},{"n":"Osun","c":"OSU","r":"South West","p":[2,0,2,3,1],"t":8,"rank":30,"m":0},{"n":"Rivers","c":"RIV","r":"South South","p":[3,0,2,2,1],"t":8,"rank":31,"m":1},{"n":"Sokoto","c":"SOK","r":"North West","p":[2,0,2,3,1],"t":8,"rank":32,"m":1},{"n":"Anambra","c":"ANA","r":"South East","p":[2,1,1,3,0],"t":7,"rank":33,"m":2},{"n":"Yobe","c":"YOB","r":"North East","p":[0,0,2,3,1],"t":6,"rank":34,"m":1},{"n":"Borno","c":"BOR","r":"North East","p":[0,0,1,2,2],"t":5,"rank":35,"m":2},{"n":"Zamfara","c":"ZAM","r":"North West","p":[0,1,1,3,0],"t":5,"rank":36,"m":1},{"n":"Bauchi","c":"BAU","r":"North East","p":[0,0,1,3,0],"t":4,"rank":37,"m":0}];
+  const PILLARS = [["Policy formulation",3],["Regulatory setup",3],["Infrastructure",3],["Market participation",3],["Performance",5]];
+  const tilesEl = document.getElementById('tiles');
+  let sort = 'rank', selected = 'Lagos', lens = 'all', reg = 'all';
+
+  function drawTiles(){
+    const max = lens==='mob' ? 4 : 17;
+    const val = s => lens==='mob' ? s.m : s.t;
+    const list=[...STATES].sort((a,b)=> sort==='rank' ? (val(b)-val(a)||a.n.localeCompare(b.n)) : a.n.localeCompare(b.n));
+    tilesEl.innerHTML=list.map(s=>
+      `<button class="tile${s.n===selected?' sel':''}${reg!=='all'&&s.r!==reg?' off':''}" data-n="${s.n}" data-o="${(0.3+0.7*val(s)/max).toFixed(2)}" style="${s.n===selected?'':'opacity:'+(0.3+0.7*val(s)/max).toFixed(2)}" aria-label="${s.n}, ${val(s)} of ${max}">
+        <span class="tc">${s.c}</span><span class="tn">${val(s)}/${max}</span></button>`).join('');
+  }
+  tilesEl.addEventListener('click',e=>{
+    const b=e.target.closest('.tile'); if(!b) return;
+    selected=b.dataset.n; drawTiles(); drawPanel();
+  });
+  document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{
+    sort=b.dataset.sort;
+    document.querySelectorAll('[data-sort]').forEach(x=>x.classList.toggle('active',x===b));
+    drawTiles();
+  }));
+  document.querySelectorAll('[data-lens]').forEach(b=>b.addEventListener('click',()=>{
+    lens=b.dataset.lens;
+    document.querySelectorAll('[data-lens]').forEach(x=>x.classList.toggle('active',x===b));
+    drawTiles();
+  }));
+  document.querySelectorAll('[data-reg]').forEach(b=>b.addEventListener('click',()=>{
+    reg=b.dataset.reg;
+    document.querySelectorAll('[data-reg]').forEach(x=>x.classList.toggle('active',x===b));
+    drawTiles();
+  }));
+
+  // cursor proximity: tiles brighten as the pointer sweeps over the grid
+  if(matchMedia('(hover:hover) and (prefers-reduced-motion: no-preference)').matches){
+    let raf=null;
+    tilesEl.addEventListener('pointermove',ev=>{
+      if(raf) return;
+      raf=requestAnimationFrame(()=>{raf=null;
+        const R=130;
+        tilesEl.querySelectorAll('.tile').forEach(t=>{
+          if(t.classList.contains('sel')) return;
+          const r=t.getBoundingClientRect(), dx=ev.clientX-(r.left+r.width/2), dy=ev.clientY-(r.top+r.height/2);
+          const d=Math.hypot(dx,dy), base=parseFloat(t.dataset.o);
+          const k=Math.max(0,1-d/R);
+          t.style.opacity=(base+(1-base)*k).toFixed(2);
+          t.style.outline = k>0.55 ? '2px solid var(--lime)' : '';
+          t.style.outlineOffset = '-2px';
+        });
+      });
+    });
+    tilesEl.addEventListener('pointerleave',()=>{
+      tilesEl.querySelectorAll('.tile').forEach(t=>{
+        if(!t.classList.contains('sel')){t.style.opacity=t.dataset.o;t.style.outline='';}
+      });
+    });
+  }
+
+  function drawPanel(){
+    const s=STATES.find(x=>x.n===selected), panel=document.getElementById('panel');
+    document.getElementById('pState').textContent=s.n;
+    document.getElementById('pMeta').textContent='Rank '+String(s.rank).padStart(2,'0')+' · '+s.r+' · Clean mobility '+s.m+'/4';
+    countUp(document.getElementById('pScore'),s.t,700,0);
+    document.getElementById('pRows').innerHTML = PILLARS.map((p,i)=>{
+      const got=s.p[i], max=p[1];
+      let segs=''; for(let k=0;k<max;k++) segs+=`<span class="seg ${k<got?(got===max?'full':'on'):''}" style="transition-delay:${(i*70+k*60)}ms"></span>`;
+      return `<div class="prow"><span class="pl">${p[0]}</span><span class="segs">${segs}</span><span class="pv">${got}/${max}</span></div>`;
+    }).join('');
+    panel.classList.remove('play'); void panel.offsetWidth; panel.classList.add('play');
+  }
+  drawTiles(); drawPanel();
+
+  // ---------- beam-in + wire dots + section words ----------
+
+  // ---------- shareable scorecard (1080x1350 PNG, drawn in-brand on canvas) ----------
+  const NAVY='#0D1E36', LIME='#E4F995', GREEN='#3B5A4B', WHITE='#FFFFFF';
+  const ICON_D=[...document.querySelectorAll('#heroIcon path')].map(p=>p.getAttribute('d'));
+
+  async function buildCard(s){
+    await document.fonts.load('700 120px "Instrument Sans"');
+    await document.fonts.load('600 34px "Instrument Sans"');
+    const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;
+    const x=c.getContext('2d');
+
+    x.fillStyle=NAVY;x.fillRect(0,0,W,H);
+    x.fillStyle=LIME;x.fillRect(0,0,W,14);                       // top strip
+
+    // cropped icon, bottom-right, bars running off the frame
+    x.save();x.translate(W-430,H-760);x.scale(.62,.62);
+    x.globalAlpha=.9;x.fillStyle=LIME;
+    ICON_D.forEach(d=>x.fill(new Path2D(d)));x.restore();
+
+    const caps=(t,size,w)=>{x.font=`600 ${size}px "Instrument Sans"`;x.letterSpacing='3px';x.fillStyle=w;};
+    caps('',30,'rgba(255,255,255,.75)');x.font='600 30px "Instrument Sans"';
+    x.fillText('NIGERIA ENERGY TRACKER · 2026 RANKING',72,112);
+
+    // state name, wrapped
+    x.fillStyle=WHITE;x.font='700 118px "Instrument Sans"';
+    const words=s.n.split(' ');let lines=[],line='';
+    words.forEach(w=>{const t=line?line+' '+w:w;
+      if(x.measureText(t).width>620&&line){lines.push(line);line=w;}else line=t;});
+    lines.push(line);
+    let y=252;lines.forEach(l=>{x.fillText(l,68,y);y+=118;});
+
+    x.font='600 30px "Instrument Sans"';x.fillStyle='rgba(255,255,255,.7)';
+    x.fillText(('RANK '+String(s.rank).padStart(2,'0')+' OF 37 · '+s.r).toUpperCase(),72,y+6);
+
+    // giant score
+    x.fillStyle=LIME;x.font='700 230px "Instrument Sans"';
+    x.fillText(s.t,68,y+256);
+    const sw=x.measureText(String(s.t)).width;
+    x.fillStyle='rgba(255,255,255,.65)';x.font='700 86px "Instrument Sans"';
+    x.fillText('/17',76+sw,y+256);
+    x.font='600 28px "Instrument Sans"';
+    x.fillText('INDICATORS MET',72,y+312);
+
+    // pillar rows
+    const P=[['POLICY FORMULATION',3],['REGULATORY SETUP',3],['INFRASTRUCTURE',3],['MARKET PARTICIPATION',3],['PERFORMANCE',5]];
+    let py=y+396;
+    P.forEach((pl,i)=>{
+      x.fillStyle='rgba(255,255,255,.75)';x.font='600 26px "Instrument Sans"';
+      x.fillText(pl[0],72,py+24);
+      const got=s.p[i],max=pl[1],segW=64,gap=10;
+      for(let k=0;k<max;k++){
+        const full=got===max&&k<got;
+        x.fillStyle=k<got?(full?LIME:WHITE):'rgba(255,255,255,.16)';
+        x.fillRect(470+k*(segW+gap),py,segW,30);
+      }
+      x.fillStyle=WHITE;x.font='700 28px "Instrument Sans"';
+      x.fillText(got+'/'+max,470+5*(segW+gap)+14,py+26);
+      py+=66;
+    });
+    x.fillStyle='rgba(255,255,255,.75)';x.font='600 26px "Instrument Sans"';
+    x.fillText('CLEAN MOBILITY',72,py+24);
+    x.fillStyle=WHITE;x.font='700 28px "Instrument Sans"';
+    x.fillText(s.m+'/4',470,py+26);
+
+    // footer
+    x.fillStyle=LIME;x.fillRect(72,H-128,36,36);
+    x.fillStyle=WHITE;x.font='700 30px "Instrument Sans"';
+    x.fillText('nigeriaenergytracker.com',128,H-100);
+    x.fillStyle='rgba(255,255,255,.6)';x.font='600 24px "Instrument Sans"';
+    x.fillText('BY VERIV AFRICA · SOURCE: 2026 RANKING REPORT',72,H-52);
+    return c;
+  }
+
+  document.getElementById('shareBtn').addEventListener('click',async()=>{
+    const s=STATES.find(x=>x.n===selected);
+    const c=await buildCard(s);
+    c.toBlob(async blob=>{
+      const file=new File([blob],'NET-scorecard-'+s.c+'.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],title:'Nigeria Energy Tracker — '+s.n,
+          text:s.n+' ranks '+s.rank+' of 37 on electricity market readiness. nigeriaenergytracker.com'});return;}catch(e){}
+      }
+      const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+      a.download='NET-scorecard-'+s.c+'.png';a.click();URL.revokeObjectURL(a.href);
+    },'image/png');
+  });
+
+  // sections dim as they leave, beam back as they return
+  const beams=new IntersectionObserver(es=>es.forEach(e=>{
+    e.target.classList.toggle('live', e.isIntersecting);
+  }),{threshold:.15,rootMargin:'-5% 0px -5% 0px'});
+  document.querySelectorAll('.beam').forEach(el=>beams.observe(el));
+
+  // the wire: a current that climbs the feed as you scroll, lighting each story it reaches
+  (function(){
+    const wire=document.getElementById('wire'); if(!wire) return;
+    const svg=wire.querySelector('.wire-svg'), base=document.getElementById('wirePath'), live=document.getElementById('wireLive');
+    const rows=[...wire.querySelectorAll('.wrow')];
+    let L=0;
+    function layout(){
+      const wr=wire.getBoundingClientRect();
+      const pts=rows.map(r=>{
+        const d=r.querySelector('.dot').getBoundingClientRect();
+        return [d.left-wr.left+d.width/2, d.top-wr.top+d.height/2];
+      });
+      svg.setAttribute('viewBox',`0 0 24 ${wr.height}`);
+      let d=`M${pts[0][0]},0`;
+      pts.forEach(p=>{d+=` L${p[0]},${p[1]}`;});
+      d+=` L${pts[0][0]},${wr.height}`;
+      base.setAttribute('d',d); live.setAttribute('d',d);
+      L=live.getTotalLength();
+      live.style.strokeDasharray=L; live.style.strokeDashoffset=L;
+    }
+    function current(){
+      const wr=wire.getBoundingClientRect(), vh=innerHeight;
+      const prog=Math.min(1,Math.max(0,(vh*0.8-wr.top)/(wr.height+vh*0.3)));
+      live.style.strokeDashoffset=L*(1-prog);
+      const tipY=wr.height*prog;
+      rows.forEach(r=>{
+        const d=r.querySelector('.dot').getBoundingClientRect();
+        r.classList.toggle('live',(d.top+d.height/2-wr.top)<=tipY);
+      });
+    }
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+      layout(); live.style.strokeDashoffset=0; rows.forEach(r=>r.classList.add('live')); return;
+    }
+    layout(); current();
+    addEventListener('scroll',()=>requestAnimationFrame(current),{passive:true});
+    addEventListener('resize',()=>{layout();current();});
+  })();
+
+  // hero bars rise once on load
+  window.addEventListener('load',()=>{document.getElementById('heroIcon').classList.add('on');document.body.classList.add('on-word');});
+
+  // ranking bars grow + counters count up when visible
+  const table=document.getElementById('rankTable');
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;
+    table.classList.add('grown');
+    table.querySelectorAll('.rbar').forEach(b=>b.style.width=b.dataset.w);
+    table.querySelectorAll('.rscore').forEach(s=>countUp(s,parseFloat(s.dataset.n),1300,1));
+    io.disconnect();});},{threshold:.35});
+  io.observe(table);
+
+  const big=document.getElementById('counter');
+  const io2=new IntersectionObserver((es)=>{es.forEach(e=>{if(!e.isIntersecting)return;
+    countUp(big,37,1100,0);io2.disconnect();});},{threshold:.5});
+  io2.observe(big);
+
+  function countUp(el,target,dur,dp){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=target.toFixed(dp);return;}
+    const t0=performance.now();
+    (function tick(t){const p=Math.min(1,(t-t0)/dur);
+      const v=target*(1-Math.pow(2,-10*p));           // expo.out
+      el.textContent=(p<1?v:target).toFixed(dp);
+      if(p<1)requestAnimationFrame(tick);})(t0);
+  }
+</script>
+</body>
+</html>
