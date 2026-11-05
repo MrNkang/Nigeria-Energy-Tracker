@@ -675,22 +675,25 @@
     x.fillStyle=NAVY;x.fillRect(0,0,W,H);
     x.fillStyle=LIME;x.fillRect(0,0,W,14);                       // top strip
 
-    // cropped icon, bottom-right, bars running off the frame
-    x.save();x.translate(W-430,H-760);x.scale(.62,.62);
-    x.globalAlpha=.9;x.fillStyle=LIME;
-    ICON_D.forEach(d=>x.fill(new Path2D(d)));x.restore();
-
     const caps=(t,size,w)=>{x.font=`600 ${size}px "Instrument Sans"`;x.letterSpacing='3px';x.fillStyle=w;};
     caps('',30,'rgba(255,255,255,.75)');x.font='600 30px "Instrument Sans"';
     x.fillText('NIGERIA ENERGY TRACKER · 2026 RANKING',72,112);
 
-    // state name, wrapped
-    x.fillStyle=WHITE;x.font='700 118px "Instrument Sans"';
-    const words=s.n.split(' ');let lines=[],line='';
-    words.forEach(w=>{const t=line?line+' '+w:w;
-      if(x.measureText(t).width>620&&line){lines.push(line);line=w;}else line=t;});
-    lines.push(line);
-    let y=252;lines.forEach(l=>{x.fillText(l,68,y);y+=118;});
+    // state name: one line, shrinking from 118px to no less than ~70% to fit the card width;
+    // only if it still doesn't fit, wrap at the minimum size with tight leading
+    x.fillStyle=WHITE;
+    const NAME_MAX=118,NAME_MIN=83,nameW=W-68-72;
+    let fs=NAME_MAX;x.font=`700 ${fs}px "Instrument Sans"`;
+    while(x.measureText(s.n).width>nameW&&fs>NAME_MIN){fs--;x.font=`700 ${fs}px "Instrument Sans"`;}
+    let lines=[s.n],lh=fs;
+    if(x.measureText(s.n).width>nameW){
+      lines=[];let line='';lh=Math.round(fs*1.04);
+      s.n.split(' ').forEach(w=>{const t=line?line+' '+w:w;
+        if(x.measureText(t).width>nameW&&line){lines.push(line);line=w;}else line=t;});
+      lines.push(line);
+    }
+    let y=252-(NAME_MAX-fs)*.72;                                  // keep the cap top where it was
+    lines.forEach((l,i)=>{if(i)y+=lh;x.fillText(l,68,y);});y+=lh;
 
     x.font='600 30px "Instrument Sans"';x.fillStyle='rgba(255,255,255,.7)';
     x.fillText(('RANK '+String(s.rank).padStart(2,'0')+' OF 37 · '+s.r).toUpperCase(),72,y+6);
@@ -703,6 +706,16 @@
     x.fillText('/17',76+sw,y+256);
     x.font='600 28px "Instrument Sans"';
     x.fillText('INDICATORS MET',72,y+312);
+
+    // cropped icon, upper-right beside the score, between rank line and pillar table,
+    // bars running off the right edge; uniform scale only
+    const imW=x.measureText('INDICATORS MET').width;x.font='700 86px "Instrument Sans"';
+    const scoreR=Math.max(76+sw+x.measureText('/17').width,72+imW);
+    const iTop=y+44,iBot=y+396-40,k=(iBot-iTop)/905,iW=995*k;
+    const iX=Math.max(W-iW*.85,scoreR+48);
+    x.save();x.translate(iX,iTop);x.scale(k,k);
+    x.globalAlpha=.9;x.fillStyle=LIME;
+    ICON_D.forEach(d=>x.fill(new Path2D(d)));x.restore();
 
     // pillar rows
     const P=[['POLICY FORMULATION',3],['REGULATORY SETUP',3],['INFRASTRUCTURE',3],['MARKET PARTICIPATION',3],['PERFORMANCE',5]];
