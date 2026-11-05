@@ -232,7 +232,7 @@
   .nmap .code.off{opacity:.08}
   .nmap .hit{fill:transparent;stroke:none;cursor:pointer}
   .nmap .inset-frame{fill:none;stroke:rgba(255,255,255,.35);stroke-width:1.5}
-  .nmap .inset-name{fill:rgba(255,255,255,.7);font:600 22px/1 'Instrument Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-anchor:middle;pointer-events:none}
+  .nmap .inset-name{fill:rgba(255,255,255,.7);font:600 34px/1 'Instrument Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;text-anchor:middle;pointer-events:none}
   @media(max-width:520px){.nmap .code{display:none}}
   .credit{margin:12px 0 0;font:500 12px/1.5 'Instrument Sans',sans-serif;color:rgba(255,255,255,.55)}
   .credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
@@ -556,8 +556,8 @@
   // ---------- choropleth map: same data, same scale, same selection as the tiles ----------
   const mapEl = document.getElementById('nmap');
   const INSETS = [ // Lagos and the FCT are small on the map: each also gets a framed, enlarged copy (whole frame is the tap target)
-    {n:'FCT',   x:640, y:660, w:168, h:112},
-    {n:'Lagos', x:824, y:660, w:168, h:112}
+    {n:'FCT',   x:596, y:640, w:192, h:126},
+    {n:'Lagos', x:800, y:640, w:192, h:126}
   ];
   const HITS = {Lagos:[60,30], FCT:[40,40]}; // invisible ellipse (rx, ry) over the main-map shape, for fingers
   function buildMap(){
@@ -581,7 +581,7 @@
       const g=makeState(s,'inset');
       const frame=el('rect',{class:'inset-frame',x:ins.x,y:ins.y,width:ins.w,height:ins.h});
       const hit=el('rect',{class:'hit',x:ins.x,y:ins.y,width:ins.w,height:ins.h});
-      const name=el('text',{class:'inset-name',x:ins.x+ins.w/2,y:ins.y+ins.h+18}); name.textContent=s.n;
+      const name=el('text',{class:'inset-name',x:ins.x+ins.w/2,y:ins.y+ins.h+36}); name.textContent=s.n;
       g.insertBefore(hit,g.firstChild); g.appendChild(frame); g.appendChild(name);
       mapEl.appendChild(g);
       const b=g.querySelector('path').getBBox(), pad=10; if(!b.width) return;
